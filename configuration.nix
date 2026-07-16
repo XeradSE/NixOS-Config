@@ -225,6 +225,7 @@
     winetricks
     sunshine
     moonlight-qt       # ou Sunshine
+    protonplus
 
     # ----------------------------------------
     # Bureautique & Utilitaires GUI
