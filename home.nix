@@ -16,6 +16,7 @@
     ".config/kitty".source = ./dotfiles/kitty;
     ".config/mako".source = ./dotfiles/mako;
     ".config/wofi".source = ./dotfiles/wofi;
+    ".config/quickshell".source = ./dotfiles/quickshell;
   };
 
   # Tu pourras aussi installer des paquets spécifiques à ton utilisateur ici plus tard
