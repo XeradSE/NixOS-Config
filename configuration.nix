@@ -194,6 +194,7 @@
     wget fd fzf ripgrep jq zoxide btop fastfetch
     p7zip unrar eza # eza remplace avantageusement ls
     wl-clipboard xdotool ydotool yad kitty yazi nano
+    bluetuith
 
     # ----------------------------------------
     # Environnement Hyprland (Modules)
