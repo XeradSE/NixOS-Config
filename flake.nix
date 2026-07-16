@@ -31,6 +31,7 @@
         modules = [
           ./hardware-laptop.nix
           ./configuration.nix
+          ./laptop.nix
 
 	  # + On active le module Home Manager
           inputs.home-manager.nixosModules.home-manager
