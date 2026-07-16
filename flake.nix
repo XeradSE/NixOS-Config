@@ -29,7 +29,7 @@
         
         # On inclut tes fichiers de configuration actuels
         modules = [
-          ./hardware-configuration.nix
+          ./hardware-laptop.nix
           ./configuration.nix
 
 	  # + On active le module Home Manager
@@ -37,7 +37,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-	    home-manager.backupFileExtension = "backup";
+	          home-manager.backupFileExtension = "backup";
             
             # + On dit à Home Manager de lire la config de ton utilisateur
             # Remplace "kbetuel" par ton vrai nom d'utilisateur système
@@ -45,7 +45,25 @@
           }
         ];
       };
+
+      # 🖥️ Ton PC fixe (Tour)
+  desktop = nixpkgs.lib.nixosSystem {
+    system = "x86_64-linux";
+    specialArgs = { inherit inputs; };
+    modules = [
+      ./hardware-desktop.nix # Le hardware scanné sur la tour
+      ./configuration.nix    # Le MÊME socle commun
+      ./desktop.nix          # 🔥 Le fichier contenant tes règles uniques au fixe
       
+      inputs.home-manager.nixosModules.home-manager
+      {
+        home-manager.useGlobalPkgs = true;
+        home-manager.useUserPackages = true;
+	      home-manager.backupFileExtension = "backup";
+        home-manager.users.xerad = import ./home.nix;
+      }
+    ];
+  };
     };
   };
 }

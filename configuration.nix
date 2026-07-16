@@ -7,7 +7,7 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
+      # ./hardware-configuration.nix -- done by flake
     ];
 
   # Use the systemd-boot EFI boot loader.
