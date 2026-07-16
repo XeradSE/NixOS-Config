@@ -49,3 +49,10 @@ flatpak update
 \`\`\`bash
 flatpak run <Application_ID>
 \`\`\`
+
+---
+
+JDownloader2 -> Flatpak
+Nmtui-go -> executable
+Bluetuith -> executable OR config ???
+Affinity
