@@ -37,6 +37,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
+	    home-manager.backupFileExtension = "backup";
             
             # + On dit à Home Manager de lire la config de ton utilisateur
             # Remplace "kbetuel" par ton vrai nom d'utilisateur système
