@@ -11,11 +11,9 @@ if [ ! -d "$DOSSIER" ]; then
 fi
 
 # Lance le démon awww en fond s'il n'est pas déjà actif
-if ! awww query >/dev/null 2>&1; then
-  awww-daemon &
-  disown
-  sleep 1 # Laisse 1 seconde au moteur pour s'allumer
-fi
+while ! awww query >/dev/null 2>&1; do
+  sleep 0.1
+done
 
 # --- BOUCLE DU DIAPORAMA ---
 while true; do
