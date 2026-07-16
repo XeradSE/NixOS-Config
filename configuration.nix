@@ -203,6 +203,7 @@
     grim slurp swappy # Capture d'écran (remplace xorg-tools)
     brightnessctl  # Luminosité
     awww
+    quickshell
 
     # ----------------------------------------
     # Développement & Outils
@@ -219,6 +220,7 @@
     prismlauncher # minecraft
     wineWow64Packages.staging # Wine avec support 32/64 bits
     winetricks
+    sunshine
     moonlight-qt       # ou Sunshine
 
     # ----------------------------------------
