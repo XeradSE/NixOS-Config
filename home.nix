@@ -64,4 +64,31 @@
     # enableZshIntegration = true; (activé par défaut)
   };
 
+  gtk = {
+    enable = true;
+    
+    theme = {
+      # Le nom exact tel qu'il apparaît dans le système
+      name = "Breeze"; 
+      # Le paquet NixOS correspondant
+      package = pkgs.kdePackages.breeze-gtk; 
+    };
+
+    iconTheme = {
+      name = "candy-icons";
+      package = pkgs.candy-icons;
+    };
+  };
+
+  # 2. Configuration du Curseur (Souris)
+  home.pointerCursor = {
+    name = "Vimix-cursors"; # Le nom du dossier généré par le thème
+    package = pkgs.vimix-cursors;
+    size = 24;
+    
+    # Home Manager va automatiquement exporter XCURSOR_THEME et XCURSOR_SIZE
+    gtk.enable = true;
+    x11.enable = true; 
+  };
+
 }

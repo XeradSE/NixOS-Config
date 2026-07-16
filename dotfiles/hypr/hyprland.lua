@@ -31,11 +31,6 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("systemctl --user start sunshine.service")
 	hl.exec_cmd("systemctl --user start hyprpolkitagent")
 
-	-- Thèmes GTK (Portails et Curseur)
-	hl.exec_cmd("gsettings set org.gnome.desktop.interface icon-theme 'candy-icons'")
-	hl.exec_cmd("gsettings set org.gnome.desktop.interface gtk-theme 'Breeze'")
-	hl.exec_cmd("gsettings set org.gnome.desktop.interface cursor-theme 'AC-Vimix'")
-
 	-- Lancement des applications de ta forge
 	hl.exec_cmd("qs -c ~/.config/quickshell/forge/")
 	hl.exec_cmd("~/Documents/bluetuith_0.2.6_Linux_x86_64/bluetuith")
@@ -60,10 +55,6 @@ hl.config({
 		"LIBVA_DRIVER_NAME,nvidia",
 		"GBM_BACKEND,nvidia-drm",
 		"__GLX_VENDOR_LIBRARY_NAME,nvidia",
-		"HYPRCURSOR_THEME,AC-Vimix",
-		"XCURSOR_THEME,AC-Vimix",
-		"XCURSOR_SIZE,24",
-		"HYPRCURSOR_SIZE,24",
 		"QT_QPA_PLATFORMTHEME,qt6ct",
 	},
 
