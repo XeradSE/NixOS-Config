@@ -1,0 +1,62 @@
+/* --- ~/.config/wofi/style.css --- */
+
+window {
+    margin: 0px;
+    /* La nouvelle bordure Magenta */
+    border: 2px solid #a200a2; 
+    background-color: rgba(30, 30, 46, 0.33); 
+    border-radius: 5px;
+    font-family: "JetBrainsMono Nerd Font", sans-serif;
+    font-size: 15px;
+}
+
+#input {
+    margin: 15px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    color: #cdd6f4;
+    background-color: rgba(49, 50, 68, 0.33);
+    outline: none;
+}
+
+#inner-box {
+    margin: 5px;
+    border: none;
+    background-color: transparent;
+}
+
+#outer-box {
+    margin: 5px;
+    border: none;
+    background-color: transparent;
+}
+
+#scroll {
+    /* On déplace les marges latérales ici pour compresser la zone de sélection */
+    margin: 0px 15px 15px 15px; 
+    border: none;
+}
+
+#text {
+    margin: 5px;
+    border: none;
+    color: #a6adc8;
+}
+
+#entry {
+    padding: 8px;
+    /* Plus de marges sur les côtés, juste 5px en bas pour séparer les lignes */
+    margin: 0px 0px 5px 0px; 
+    border-radius: 5px;
+}
+
+/* La nouvelle surbrillance Magenta */
+#entry:selected {
+    background-color: #a200a2;
+}
+
+#entry:selected #text {
+    color: #ffffff;
+    font-weight: bold;
+}

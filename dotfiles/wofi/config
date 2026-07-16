@@ -1,0 +1,23 @@
+# --- ~/.config/wofi/config ---
+
+# N'afficher que les applications
+show=drun
+prompt=Rechercher une application...
+
+# Dimensions de la fenêtre
+width=800
+lines=8
+
+# Nettoyage visuel
+hide_scroll=true
+allow_markup=true
+no_actions=true
+halign=fill
+orientation=vertical
+content_halign=fill
+
+allow_images=true
+insensitive=true
+image_size=24
+# Force Wofi à chercher les exécutables sans tenir compte de la casse absolue
+matching=contains
