@@ -54,5 +54,5 @@ flatpak run <Application_ID>
 
 JDownloader2 -> Flatpak
 Nmtui-go -> executable
-Bluetuith -> executable OR config ???
-Affinity
+Affinity -> appImage
+Flatseal -> Flatpak (bon pour gérer les perms des autres flatpak je crois)

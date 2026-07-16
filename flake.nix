@@ -33,14 +33,14 @@
           ./configuration.nix
 
 	  # + On active le module Home Manager
-          home-manager.nixosModules.home-manager
+          inputs.home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             
             # + On dit à Home Manager de lire la config de ton utilisateur
             # Remplace "kbetuel" par ton vrai nom d'utilisateur système
-            home-manager.users.kbetuel = import ./home.nix;
+            home-manager.users.xerad = import ./home.nix;
           }
         ];
       };
