@@ -205,6 +205,7 @@
     brightnessctl  # Luminosité
     awww
     quickshell
+    oh-my-zsh
 
     # ----------------------------------------
     # Développement & Outils

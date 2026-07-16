@@ -54,6 +54,11 @@
     '';
   };
 
+    programs.zsh.ohMyZsh = {
+      enable = true;
+      theme = "robbyrussell";
+    };
+
   # 2. Les outils qui s'intègrent tout seuls à Zsh
   # Plus besoin de rajouter des 'eval "$(zoxide init zsh)"' !
   programs.zoxide.enable = true;
