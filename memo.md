@@ -56,3 +56,4 @@ JDownloader2 -> Flatpak
 Nmtui-go -> executable
 Affinity -> appImage
 Flatseal -> Flatpak (bon pour gérer les perms des autres flatpak je crois)
+Antigravity -> Nix Packages -> voir pour enable le cli et disable the gui, c'est possible
