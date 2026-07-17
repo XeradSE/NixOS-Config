@@ -97,4 +97,6 @@
     x11.enable = true; 
   };
 
+  programs.antigravity-cli.enable = true;
+
 }
