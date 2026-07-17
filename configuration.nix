@@ -207,6 +207,7 @@
     awww
     quickshell
     oh-my-zsh
+    pwvucontrol
 
     # ----------------------------------------
     # Développement & Outils
