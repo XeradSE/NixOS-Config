@@ -215,6 +215,8 @@
     beekeeper-studio
     git
     gh             # github-cli
+    android-studio
+    antigravity
     
     # ----------------------------------------
     # Gaming (Hors Steam)
