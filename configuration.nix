@@ -216,8 +216,8 @@
     git
     gh             # github-cli
     android-studio
-    antigravity
-    
+    antigravity-cli # not in the packages but shown in the options weirdly on the site
+
     # ----------------------------------------
     # Gaming (Hors Steam)
     lutris
