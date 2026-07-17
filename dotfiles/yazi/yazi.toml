@@ -1,0 +1,65 @@
+# =================================================================
+# COMPORTEMENT GÉNÉRAL DE L'INTERFACE
+# =================================================================
+[manager]
+# Le ratio de taille des 3 colonnes : Parent, Courant, Prévisualisation
+ratio          = [ 1, 4, 3 ]
+# Tri des fichiers
+sort_by        = "alphabetical"
+sort_sensitive = false
+sort_reverse   = false
+sort_dir_first = true
+# Afficher les fichiers cachés par défaut ?
+show_hidden    = false
+# Montrer les liens symboliques
+show_symlink   = true
+
+[preview]
+# Limiter la taille des fichiers à prévisualiser pour garder de la fluidité
+max_width  = 1920
+max_height = 1080
+image_filter = "triangle"
+image_quality = 75
+
+# =================================================================
+# DÉFINITION DES OUTILS (Openers)
+# =================================================================
+[opener]
+# La nouvelle syntaxe utilise %s au lieu de "$@"
+edit = [
+    { run = 'nvim %s', block = true, desc = "Neovim" },
+]
+
+# Pour exécuter un programme, la commande EST le fichier lui-même (%s)
+exec = [
+    { run = '%s', orphan = true, desc = "Lancer (Détaché)" },
+    { run = '%s', block = true, desc = "Lancer (Dans le terminal)" },
+]
+
+play = [
+    { run = 'xdg-open %s', orphan = true, desc = "Ouvrir avec l'app par défaut" },
+]
+
+# =================================================================
+# RÈGLES DE ROUTAGE (Quel fichier ouvre quel outil)
+# =================================================================
+[open]
+prepend_rules = [
+    # 1. Les AppImages interceptées directement par leur extension (url)
+    # Note : url est insensible à la casse par défaut, donc "*.appimage" couvre aussi "*.AppImage"
+    { url = "*.appimage", use = [ "exec" ] },
+    
+    # Les binaires classiques interceptés par leur type natif
+    { mime = "application/x-executable", use = [ "exec" ] },
+    { mime = "application/x-pie-executable", use = [ "exec" ] },
+    
+    # 2. Textes et Code -> Neovim
+    { mime = "text/*", use = [ "edit" ] },
+    { mime = "application/json", use = [ "edit" ] },
+    { mime = "inode/x-empty", use = [ "edit" ] },
+
+    # 3. Formats médias
+    { mime = "image/*", use = [ "play" ] },
+    { mime = "video/*", use = [ "play" ] },
+    { mime = "application/pdf", use = [ "play" ] },
+]

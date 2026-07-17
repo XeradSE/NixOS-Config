@@ -18,6 +18,7 @@
     ".config/wofi".source = ./dotfiles/wofi;
     ".config/quickshell".source = ./dotfiles/quickshell;
     ".config/btop".source = ./dotfiles/btop;
+    ".config/yazi".source = ./dotfiles/yazi;
   };
 
   # Tu pourras aussi installer des paquets spécifiques à ton utilisateur ici plus tard
