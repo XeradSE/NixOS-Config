@@ -8,6 +8,8 @@
   imports =
     [ # Include the results of the hardware scan.
       # ./hardware-configuration.nix -- done by flake
+
+      nixpkgs.overlays = [ inputs.millennium.overlays.default ];
     ];
 
   # Use the systemd-boot EFI boot loader.
@@ -135,7 +137,6 @@
   programs.hyprland.enable = true;
   
   # Gaming (Steam installe automatiquement les lib32, Proton, et Gamescope)
-  nixpkgs.overlays = [ inputs.millennium.overlays.default ];
   programs.steam = {
     enable = true;
     package = pkgs.millennium-steam;
