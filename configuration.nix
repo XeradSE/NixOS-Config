@@ -135,7 +135,7 @@
   programs.hyprland.enable = true;
   
   # Gaming (Steam installe automatiquement les lib32, Proton, et Gamescope)
-  nixpkgs.overlays = inputs.millennium.overlays.default;
+  nixpkgs.overlays = [ inputs.millennium.overlays.default ];
   programs.steam = {
     enable = true;
     package = pkgs.millennium-steam;
