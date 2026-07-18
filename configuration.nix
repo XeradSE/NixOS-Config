@@ -135,8 +135,10 @@
   programs.hyprland.enable = true;
   
   # Gaming (Steam installe automatiquement les lib32, Proton, et Gamescope)
+  nixpkgs.overlays = [ inputs.millennium.overlays.default ];
   programs.steam = {
     enable = true;
+    package = pkgs.millennium-steam;
     gamescopeSession.enable = true;
   };
   programs.gamemode.enable = true;
@@ -197,6 +199,7 @@
     wl-clipboard xdotool ydotool yad kitty yazi nano
     bluetuith
     playerctl
+    rclone
 
     # ----------------------------------------
     # Environnement Hyprland (Modules)

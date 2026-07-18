@@ -67,4 +67,6 @@
   };
     };
   };
+
+  millennium.url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
 }
