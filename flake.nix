@@ -13,7 +13,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    millennium.url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
+    #millennium.url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
   };
 
   # Ce que ton Flake va générer en sortie

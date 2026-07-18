@@ -2,7 +2,8 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ config, lib, pkgs, inputs, ... }:
+{ config, lib, pkgs, #inputs#
+, ... }:
 
 {
   imports =
@@ -135,10 +136,10 @@
   programs.hyprland.enable = true;
   
   # Gaming (Steam installe automatiquement les lib32, Proton, et Gamescope)
-  nixpkgs.overlays = [ inputs.millennium.overlays.default ];
+  #nixpkgs.overlays = [ inputs.millennium.overlays.default ];
   programs.steam = {
     enable = true;
-    package = pkgs.millennium-steam;
+    #package = pkgs.millennium-steam;
     gamescopeSession.enable = true;
   };
   programs.gamemode.enable = true;
