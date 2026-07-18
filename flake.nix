@@ -12,6 +12,8 @@
       url = "github:nix-community/home-manager/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    millennium.url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
   };
 
   # Ce que ton Flake va générer en sortie
@@ -67,6 +69,4 @@
   };
     };
   };
-
-  millennium.url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
 }
