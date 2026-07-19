@@ -28,7 +28,7 @@ hl.on("hyprland.start", function()
 	)
 
 	-- Services d'arrière-plan
-	hl.exec_cmd("sunshine &")
+	-- hl.exec_cmd("sunshine &")
 	hl.exec_cmd("systemctl --user start hyprpolkitagent")
 
 	-- Lancement des applications de ta forge
