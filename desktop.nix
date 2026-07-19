@@ -32,4 +32,11 @@
     # "production" est plus stable, "beta" est parfois nécessaire pour les cartes très récentes
     package = config.boot.kernelPackages.nvidiaPackages.production; 
   };
+
+  services.sunshine = {
+    enable = true;
+    autoStart = false; # On laisse ton hyprland.lua s'en charger pour le moment
+    capSysAdmin = true; # C'est LA ligne magique qui autorise la capture KMS silencieuse
+    openFirewall = true; # Ouvre automatiquement les ports pour Moonlight
+  };
 }

@@ -228,8 +228,6 @@
     prismlauncher # minecraft
     wineWow64Packages.staging # Wine avec support 32/64 bits
     winetricks
-    sunshine
-    moonlight-qt       # ou Sunshine
     protonplus
 
     # ----------------------------------------
