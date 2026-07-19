@@ -23,4 +23,13 @@
   systemd.targets.suspend.enable = false;
   systemd.targets.hibernate.enable = false;
   systemd.targets.hybrid-sleep.enable = false;
+
+  services.xserver.videoDrivers = [ "nvidia" ];
+  hardware.nvidia = {
+    modesetting.enable = true;
+    open = false; # Utilise les pilotes propriétaires fermés
+    nvidiaSettings = true;
+    # "production" est plus stable, "beta" est parfois nécessaire pour les cartes très récentes
+    package = config.boot.kernelPackages.nvidiaPackages.production; 
+  };
 }
