@@ -28,15 +28,15 @@ hl.on("hyprland.start", function()
 	)
 
 	-- Services d'arrière-plan
-	-- hl.exec_cmd("sunshine &")
+  hl.exec_cmd("sunshine &")
 	hl.exec_cmd("systemctl --user start hyprpolkitagent")
 
 	-- Lancement des applications de ta forge
 	hl.exec_cmd("qs -c ~/.config/quickshell/forge/")
 	hl.exec_cmd("~/Documents/bluetuith_0.2.6_Linux_x86_64/bluetuith")
 	-- hl.exec_cmd("hyprpaper")
-	hl.exec_cmd("awww-daemon &")
-	hl.exec_cmd("~/.config/hypr/scripts/awww_slideshow.sh &")
+	-- hl.exec_cmd("awww-daemon &")
+	-- hl.exec_cmd("~/.config/hypr/scripts/awww_slideshow.sh &")
 	hl.exec_cmd("/usr/lib/polkit-kde-authentication-agent-1")
 	hl.exec_cmd("nm-applet --indicator")
 	hl.exec_cmd("kbuildsycoca6")

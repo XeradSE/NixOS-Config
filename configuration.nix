@@ -207,7 +207,6 @@
     wofi           # Lanceur d'applications
     grim slurp swappy # Capture d'écran (remplace xorg-tools)
     brightnessctl  # Luminosité
-    awww
     quickshell
     oh-my-zsh
     pwvucontrol
@@ -261,6 +260,61 @@
   environment.variables = {
     QT_QPA_PLATFORM = "wayland";
   };
+
+systemd.user.services.awww-slideshow = {
+  description = "Awww Wallpaper Daemon and Slideshow";
+  
+  # Le service démarre en même temps que l'environnement graphique
+  partOf = [ "graphical-session.target" ];
+  after = [ "graphical-session.target" ];
+  wantedBy = [ "graphical-session.target" ];
+
+  # Déclare explicitement les paquets dont le script a besoin pour fonctionner
+  path = with pkgs; [ 
+    awww 
+    coreutils # Pour shuf et sleep
+    findutils # Pour find
+  ];
+
+  # Ton script bash parfaitement intégré
+  script = ''
+    #!/usr/bin/env bash
+
+    DOSSIER="$HOME/Pictures/Wallpapers/"
+    TEMPS="5m"
+
+    if [ ! -d "$DOSSIER" ]; then
+      echo "Erreur : Le dossier $DOSSIER n'existe pas."
+      exit 1
+    fi
+
+    # Lance le démon awww en fond
+    awww-daemon &
+    
+    # Attend que le démon soit prêt
+    while ! awww query >/dev/null 2>&1; do
+      sleep 0.1
+    done
+
+    # Boucle du diaporama
+    while true; do
+      FICHIER=$(find "$DOSSIER" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.webp" \) | shuf -n 1)
+
+      if [ -n "$FICHIER" ]; then
+        awww img "$FICHIER" --transition-type wipe --transition-angle 30 --transition-fps 60 >/dev/null 2>&1
+      fi
+
+      sleep "$TEMPS"
+    done
+  '';
+
+  serviceConfig = {
+    Type = "simple";
+    # Relance automatiquement le script en cas de crash
+    Restart = "on-failure";
+    RestartSec = "5s";
+  };
+};
 
 }
 
