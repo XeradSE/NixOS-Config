@@ -8,7 +8,7 @@
 local mainMod = "SUPER"
 local terminal = "kitty"
 local fileManager = "kitty -- bash -c yazi"
-local menu = "wofi --show drun"
+local menu = "wofi --show drun --term kitty"
 
 -- ==========================================================
 -- MONITEURS

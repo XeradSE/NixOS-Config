@@ -21,3 +21,5 @@ insensitive=true
 image_size=24
 # Force Wofi à chercher les exécutables sans tenir compte de la casse absolue
 matching=contains
+
+term=kitty

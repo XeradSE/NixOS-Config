@@ -241,6 +241,7 @@
     papirus-icon-theme
     megabasterd
     davinci-resolve
+    obs-studio
     
     # ----------------------------------------
     # Multimédia
@@ -259,6 +260,7 @@
 
   environment.variables = {
     QT_QPA_PLATFORM = "wayland";
+    TERMINAL = "kitty";
   };
 
 systemd.user.services.awww-slideshow = {
