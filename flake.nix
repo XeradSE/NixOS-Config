@@ -14,10 +14,11 @@
     };
 
     #millennium.url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
+    affinity-nix.url = "github:mrshmllow/affinity-nix";
   };
 
   # Ce que ton Flake va générer en sortie
-  outputs = { self, nixpkgs, ... }@inputs: {
+  outputs = { self, nixpkgs, affinity-nix, ... }@inputs: {
     
     # La configuration des machines
     nixosConfigurations = {
@@ -46,6 +47,11 @@
             # Remplace "kbetuel" par ton vrai nom d'utilisateur système
             home-manager.users.xerad = import ./home.nix;
           }
+
+          ({ pkgs, ... }: {
+              nixpkgs.overlays = [ affinity-nix.overlays.default ];
+              environment.systemPackages = [ pkgs.affinity-v3 ];
+            })
         ];
       };
 
@@ -65,6 +71,11 @@
 	      home-manager.backupFileExtension = "backup";
         home-manager.users.xerad = import ./home.nix;
       }
+
+          ({ pkgs, ... }: {
+              nixpkgs.overlays = [ affinity-nix.overlays.default ];
+              environment.systemPackages = [ pkgs.affinity-v3 ];
+            })
     ];
   };
     };
