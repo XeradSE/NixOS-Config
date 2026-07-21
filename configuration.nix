@@ -219,6 +219,7 @@
     git
     gh             # github-cli
     android-studio
+    gcc
     
     # ----------------------------------------
     # Gaming (Hors Steam)
