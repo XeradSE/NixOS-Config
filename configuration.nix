@@ -153,6 +153,22 @@
   virtualisation.virtualbox.host.enable = true;
   virtualisation.waydroid.enable = true;
 
+# 1. Forcer le noyau Zen à charger les modules iptables requis par Waydroid
+boot.kernelModules = [
+  "ip_tables"
+  "iptable_filter"
+  "iptable_nat"
+  "iptable_mangle"
+  "tun"
+  "veth"
+];
+
+# 2. Activer le NAT et déclarer le pont réseau
+networking.nat = {
+  enable = true;
+  internalInterfaces = [ "waydroid0" ];
+};
+
   networking.firewall.trustedInterfaces = [ "waydroid0" ];
 
   # Réseau et Connectivité
