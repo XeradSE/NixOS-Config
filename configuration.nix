@@ -214,7 +214,7 @@ networking.nat = {
     bluetuith
     playerctl
     rclone
-    dolphin
+    kdePackages.dolphin
 
     # ----------------------------------------
     # Environnement Hyprland (Modules)
