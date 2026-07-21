@@ -138,6 +138,8 @@
   #nixpkgs.overlays = [ inputs.millennium.overlays.default ];
   programs.steam = {
     enable = true;
+    remotePlay.openFirewall = true;
+    dedicatedServer.openFirewall = true;
     #package = pkgs.millennium-steam;
     gamescopeSession.enable = true;
   };
@@ -222,6 +224,7 @@
     
     # ----------------------------------------
     # Gaming (Hors Steam)
+    steamtinkerlaunch
     lutris
     heroic
     prismlauncher # minecraft
@@ -253,6 +256,7 @@
 
   hardware.graphics = {
   	enable = true;
+    enable32Bit = true;
 	extraPackages = with pkgs; [
 		intel-media-driver	
 	];
