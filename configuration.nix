@@ -224,7 +224,6 @@
     
     # ----------------------------------------
     # Gaming (Hors Steam)
-    steamtinkerlaunch
     lutris
     heroic
     prismlauncher # minecraft
