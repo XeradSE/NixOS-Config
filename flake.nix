@@ -15,10 +15,11 @@
 
     #millennium.url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
     affinity-nix.url = "github:mrshmllow/affinity-nix";
+    nur.url = "github:nix-community/NUR"; # <-- Ajouter l'input NUR
   };
 
   # Ce que ton Flake va générer en sortie
-  outputs = { self, nixpkgs, affinity-nix, ... }@inputs: {
+  outputs = { self, nixpkgs, affinity-nix, nur, ... }@inputs: {
     
     # La configuration des machines
     nixosConfigurations = {
@@ -35,6 +36,7 @@
           ./hardware-laptop.nix
           ./configuration.nix
           ./laptop.nix
+          nur.nixosModules.nur
 
 	  # + On active le module Home Manager
           inputs.home-manager.nixosModules.home-manager
@@ -63,6 +65,7 @@
       ./hardware-desktop.nix # Le hardware scanné sur la tour
       ./configuration.nix    # Le MÊME socle commun
       ./desktop.nix          # 🔥 Le fichier contenant tes règles uniques au fixe
+      nur.nixosModules.nur
       
       inputs.home-manager.nixosModules.home-manager
       {

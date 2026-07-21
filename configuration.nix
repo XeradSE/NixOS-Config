@@ -252,6 +252,7 @@ networking.nat = {
     wineWow64Packages.staging # Wine avec support 32/64 bits
     winetricks
     protonplus
+    config.nur.repos.ataraxiasjel.waydroid-script
 
     # ----------------------------------------
     # Bureautique & Utilitaires GUI
