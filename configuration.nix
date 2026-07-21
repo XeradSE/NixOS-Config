@@ -232,7 +232,6 @@ networking.nat = {
     git
     gh             # github-cli
     android-studio
-    
 
     # ----------------------------------------
     # Gaming (Steam)
@@ -252,6 +251,7 @@ networking.nat = {
     wineWow64Packages.staging # Wine avec support 32/64 bits
     winetricks
     protonplus
+    genymotion
 
     # ----------------------------------------
     # Bureautique & Utilitaires GUI
