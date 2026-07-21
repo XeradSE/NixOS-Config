@@ -153,6 +153,8 @@
   virtualisation.virtualbox.host.enable = true;
   virtualisation.waydroid.enable = true;
 
+  networking.firewall.trustedInterfaces = [ "waydroid0" ];
+
   # Réseau et Connectivité
   services.tailscale.enable = true;
   hardware.bluetooth.enable = true;
