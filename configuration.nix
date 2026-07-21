@@ -151,6 +151,7 @@
 
   # Virtualisation
   virtualisation.virtualbox.host.enable = true;
+  users.extraGroups.vboxusers.members = [ "xerad" ];
   virtualisation.waydroid.enable = true;
 
 # On active nftables, le standard moderne
