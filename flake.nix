@@ -36,7 +36,7 @@
           ./hardware-laptop.nix
           ./configuration.nix
           ./laptop.nix
-          inputs.nur.nixosModules.nur
+          inputs.nur.nixosModules.default
 
 	  # + On active le module Home Manager
           inputs.home-manager.nixosModules.home-manager
@@ -65,7 +65,7 @@
       ./hardware-desktop.nix # Le hardware scanné sur la tour
       ./configuration.nix    # Le MÊME socle commun
       ./desktop.nix          # 🔥 Le fichier contenant tes règles uniques au fixe
-      inputs.nur.nixosModules.nur
+      inputs.nur.nixosModules.default
       
       inputs.home-manager.nixosModules.home-manager
       {
