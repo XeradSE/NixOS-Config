@@ -222,6 +222,17 @@
     gh             # github-cli
     android-studio
     
+
+    # ----------------------------------------
+    # Gaming (Steam)
+    # En gros ce sont les dependancies pour steamtinkerlaunch d'après ProtonPlus
+    # Il existe un paquet mais je ne sais pas le faire fonctionner avec steam seul
+    unzip
+    xprop
+    xrandr
+    xxd
+    xwininfo
+
     # ----------------------------------------
     # Gaming (Hors Steam)
     lutris
