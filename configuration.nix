@@ -219,8 +219,6 @@
     git
     gh             # github-cli
     android-studio
-    clang
-    cmake
     
     # ----------------------------------------
     # Gaming (Hors Steam)
