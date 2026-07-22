@@ -222,6 +222,7 @@
     git
     gh             # github-cli
     android-studio
+    python313
 
     # ----------------------------------------
     # Gaming (Steam)
