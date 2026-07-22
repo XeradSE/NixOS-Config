@@ -221,7 +221,6 @@
     git
     gh             # github-cli
     android-studio
-    androidsdk
     python313
 
     # ----------------------------------------
@@ -361,6 +360,8 @@ systemd.user.services.awww-slideshow = {
   libXrandr libSM libICE
 
   glib gtk2 pango cairo gdk-pixbuf
+
+  libpng
   ];
 }
 
