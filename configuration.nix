@@ -220,7 +220,7 @@
     beekeeper-studio
     git
     gh             # github-cli
-    android-studio
+    android-studio.unwrapped
     python313
 
     # ----------------------------------------
