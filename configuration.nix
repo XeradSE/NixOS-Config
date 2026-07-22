@@ -260,7 +260,6 @@
     # Multimédia
     vlc
     imagemagick
-    scrcpy
     cava
   ];
 
