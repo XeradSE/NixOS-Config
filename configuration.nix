@@ -228,7 +228,7 @@
       includeEmulator = true;
       includeSystemImages = true;
       systemImageTypes = [ "google_apis_playstore" ];
-      androidVersions = [ "34" ]; # Android 14 par exemple
+      platformVersions = [ "34" ]; # Android 14 par exemple
       includeNDK = false;
       useGoogleAPIs = true;
     }).androidsdk
