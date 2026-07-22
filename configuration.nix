@@ -154,6 +154,16 @@
   users.extraGroups.vboxusers.members = [ "xerad" ];
   virtualisation.waydroid.enable = true;
 
+# On active nftables, le standard moderne
+networking.nftables.enable = true;
+
+# On maintient le NAT et la confiance pour Waydroid
+networking.nat = {
+  enable = true;
+  internalInterfaces = [ "waydroid0" ];
+};
+networking.firewall.trustedInterfaces = [ "waydroid0" ];
+
   # Réseau et Connectivité
   services.tailscale.enable = true;
   hardware.bluetooth.enable = true;
