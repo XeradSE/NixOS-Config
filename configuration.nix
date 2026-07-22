@@ -168,9 +168,7 @@
   programs.dconf.enable = true;
 
   # 5. Installer l'interface graphique pour créer ta VM Windows
-  environment.systemPackages = with pkgs; [
-    virt-manager
-  ];
+  # plus bas sous gaming hors steam
 
   # Réseau et Connectivité
   services.tailscale.enable = true;
@@ -259,6 +257,7 @@
     wineWow64Packages.staging # Wine avec support 32/64 bits
     winetricks
     protonplus
+    virt-manager
 
     # ----------------------------------------
     # Bureautique & Utilitaires GUI
