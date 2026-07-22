@@ -331,23 +331,18 @@ systemd.user.services.awww-slideshow = {
   };
 };
 
-  # Activation du chargeur dynamique pour les binaires non-Nix
-  # Pour utiliser Android Studio correctement (l'émulation)
-  programs.nix-ld.enable = true;
-  programs.nix-ld.libraries = with pkgs; [
-    nss
-    nspr
-    # Bibliothèques graphiques et audio souvent requises par l'émulateur Android
-    alsa-lib
-    libGL
-    vulkan-loader
-    libX11
-    libXcursor
-    libXext
-    libXfixes
-    libXi
-    libXrender
-    libXtst
+  # Dans tes environment.systemPackages ou home-manager packages :
+  environment.systemPackages = with pkgs; [
+    # Cela installe un SDK Android entièrement géré et patché par NixOS
+    (androidenv.composeAndroidPackages {
+      abiVersions = [ "x86_64" ];
+      includeEmulator = true;
+      includeSystemImages = true;
+      systemImageTypes = [ "google_apis_playstore" ];
+      androidVersions = [ "34" ]; # Android 14 par exemple
+      includeNDK = false;
+      useGoogleAPIs = true;
+    }).androidsdk
   ];
 
 }
