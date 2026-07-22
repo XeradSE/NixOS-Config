@@ -221,6 +221,7 @@
     git
     gh             # github-cli
     android-studio.unwrapped
+    androidsdk
     python313
 
     # ----------------------------------------
