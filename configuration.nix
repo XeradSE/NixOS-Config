@@ -126,8 +126,6 @@
   system.stateVersion = "26.05"; # Did you read the comment?
 
   nixpkgs.config.allowUnfree = true;
-  # Autoriser automatiquement l'acceptation de la licence Android SDK
-  nixpkgs.config.android_sdk.accept_license = true;
 
 # ==========================================
   # 1. SERVICES ET MODULES (Remplace les paquets isolés)
@@ -223,17 +221,6 @@
     git
     gh             # github-cli
     android-studio
-    # Dans tes environment.systemPackages ou home-manager packages :
-    # Cela installe un SDK Android entièrement géré et patché par NixOS
-    (androidenv.composeAndroidPackages {
-      abiVersions = [ "x86_64" ];
-      includeEmulator = true;
-      includeSystemImages = true;
-      systemImageTypes = [ "google_apis_playstore" ];
-      platformVersions = [ "34" ]; # Android 14 par exemple
-      includeNDK = false;
-      useGoogleAPIs = true;
-    }).androidsdk
     python313
 
     # ----------------------------------------
@@ -343,6 +330,25 @@ systemd.user.services.awww-slideshow = {
     RestartSec = "5s";
   };
 };
+
+# configuration.nix
+programs.nix-ld.enable = true;
+programs.nix-ld.libraries = with pkgs; [
+  # de base
+  zlib zstd stdenv.cc.cc curl openssl attr libssh bzip2 libxml2
+  acl libsodium util-linux xz systemd icu
+
+  # spécifique à l'émulateur Android (nss = ton erreur actuelle)
+  nss nspr alsa-lib libpulseaudio dbus expat libuuid
+
+  # graphique / gfxstream
+  libGL libglvnd libdrm mesa vulkan-loader
+  xorg.libX11 xorg.libxcb xorg.libxkbcommon xorg.libXcomposite
+  xorg.libXcursor xorg.libXdamage xorg.libXext xorg.libXfixes
+  xorg.libXrandr xorg.libXtst xorg.libXi xorg.libSM xorg.libICE
+
+  glib gtk2 pango cairo gdk-pixbuf
+];
 
 }
 
