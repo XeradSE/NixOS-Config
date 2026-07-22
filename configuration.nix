@@ -364,6 +364,11 @@ systemd.user.services.awww-slideshow = {
   libpng
   libxkbfile
   libbsd
+
+libXxf86vm
+libXinerama
+libXv
+libXScrnSaver
   ];
 }
 
