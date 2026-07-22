@@ -66,10 +66,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
    users.users.xerad = {
      isNormalUser = true;
-     extraGroups = [ 
-     "wheel"
-     "libvirtd"
-     ]; # Enable ‘sudo’ for the user.
+     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
      packages = with pkgs; [
        tree
      ];
@@ -153,22 +150,9 @@
   programs.fish.enable = true; # Si tu utilises fish en alternative
 
   # Virtualisation
-# 1. Forcer la virtualisation imbriquée (Nested Virtualization) pour processeur AMD au niveau du noyau
-  boot.extraModprobeConfig = ''
-    options kvm_amd nested=1
-  '';
-
-  # 2. Activer le service de virtualisation natif de Linux
-  virtualisation.libvirtd.enable = true;
-
-  # 3. Autoriser ton utilisateur à gérer et lancer les machines virtuelles sans sudo
-  # Plus haut dans le groups libvirtd
-
-  # 4. Activer dconf (indispensable pour que virt-manager puisse sauvegarder tes paramètres)
-  programs.dconf.enable = true;
-
-  # 5. Installer l'interface graphique pour créer ta VM Windows
-  # plus bas sous gaming hors steam
+  virtualisation.virtualbox.host.enable = true;
+  users.extraGroups.vboxusers.members = [ "xerad" ];
+  
 
   # Réseau et Connectivité
   services.tailscale.enable = true;
@@ -257,7 +241,6 @@
     wineWow64Packages.staging # Wine avec support 32/64 bits
     winetricks
     protonplus
-    virt-manager
 
     # ----------------------------------------
     # Bureautique & Utilitaires GUI
