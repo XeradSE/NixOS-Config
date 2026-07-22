@@ -341,13 +341,13 @@ systemd.user.services.awww-slideshow = {
     alsa-lib
     libGL
     vulkan-loader
-    xorg.libX11
-    xorg.libXcursor
-    xorg.libXext
-    xorg.libXfixes
-    xorg.libXi
-    xorg.libXrender
-    xorg.libXtst
+    libX11
+    libXcursor
+    libXext
+    libXfixes
+    libXi
+    libXrender
+    libXtst
   ];
 
 }
