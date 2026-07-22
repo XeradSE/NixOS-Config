@@ -362,7 +362,8 @@ systemd.user.services.awww-slideshow = {
   glib gtk2 pango cairo gdk-pixbuf
 
   libpng
-libxkbfile
+  libxkbfile
+  libbsd
   ];
 }
 
