@@ -369,6 +369,7 @@ libXxf86vm
 libXinerama
 libXv
 libXScrnSaver
+libxshmfence
   ];
 }
 
