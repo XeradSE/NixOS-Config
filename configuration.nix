@@ -66,7 +66,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
    users.users.xerad = {
      isNormalUser = true;
-     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+     extraGroups = [ "wheel" "vboxusers" ]; # Enable ‘sudo’ for the user.
      packages = with pkgs; [
        tree
      ];
@@ -241,6 +241,7 @@
     wineWow64Packages.staging # Wine avec support 32/64 bits
     winetricks
     protonplus
+    genymotion
 
     # ----------------------------------------
     # Bureautique & Utilitaires GUI
