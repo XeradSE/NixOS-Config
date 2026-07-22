@@ -331,5 +331,24 @@ systemd.user.services.awww-slideshow = {
   };
 };
 
+  # Activation du chargeur dynamique pour les binaires non-Nix
+  # Pour utiliser Android Studio correctement (l'émulation)
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
+    nss
+    nspr
+    # Bibliothèques graphiques et audio souvent requises par l'émulateur Android
+    alsa-lib
+    libGL
+    vulkan-loader
+    xorg.libX11
+    xorg.libXcursor
+    xorg.libXext
+    xorg.libXfixes
+    xorg.libXi
+    xorg.libXrender
+    xorg.libXtst
+  ];
+
 }
 
