@@ -126,6 +126,8 @@
   system.stateVersion = "26.05"; # Did you read the comment?
 
   nixpkgs.config.allowUnfree = true;
+  # Autoriser automatiquement l'acceptation de la licence Android SDK
+  nixpkgs.config.android_sdk.accept_license = true;
 
 # ==========================================
   # 1. SERVICES ET MODULES (Remplace les paquets isolés)
