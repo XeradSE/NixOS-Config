@@ -150,8 +150,24 @@
   programs.fish.enable = true; # Si tu utilises fish en alternative
 
   # Virtualisation
-  virtualisation.virtualbox.host.enable = true;
-  users.extraGroups.vboxusers.members = [ "xerad" ];
+# 1. Forcer la virtualisation imbriquée (Nested Virtualization) pour processeur AMD au niveau du noyau
+  boot.extraModprobeConfig = ''
+    options kvm_amd nested=1
+  '';
+
+  # 2. Activer le service de virtualisation natif de Linux
+  virtualisation.libvirtd.enable = true;
+
+  # 3. Autoriser ton utilisateur à gérer et lancer les machines virtuelles sans sudo
+  users.users.xerad.extraGroups = [ "libvirtd" ];
+
+  # 4. Activer dconf (indispensable pour que virt-manager puisse sauvegarder tes paramètres)
+  programs.dconf.enable = true;
+
+  # 5. Installer l'interface graphique pour créer ta VM Windows
+  environment.systemPackages = with pkgs; [
+    virt-manager
+  ];
 
   # Réseau et Connectivité
   services.tailscale.enable = true;
@@ -240,7 +256,6 @@
     wineWow64Packages.staging # Wine avec support 32/64 bits
     winetricks
     protonplus
-    genymotion
 
     # ----------------------------------------
     # Bureautique & Utilitaires GUI
