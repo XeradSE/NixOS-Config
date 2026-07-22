@@ -221,6 +221,17 @@
     git
     gh             # github-cli
     android-studio
+    # Dans tes environment.systemPackages ou home-manager packages :
+    # Cela installe un SDK Android entièrement géré et patché par NixOS
+    (androidenv.composeAndroidPackages {
+      abiVersions = [ "x86_64" ];
+      includeEmulator = true;
+      includeSystemImages = true;
+      systemImageTypes = [ "google_apis_playstore" ];
+      androidVersions = [ "34" ]; # Android 14 par exemple
+      includeNDK = false;
+      useGoogleAPIs = true;
+    }).androidsdk
     python313
 
     # ----------------------------------------
@@ -330,20 +341,6 @@ systemd.user.services.awww-slideshow = {
     RestartSec = "5s";
   };
 };
-
-  # Dans tes environment.systemPackages ou home-manager packages :
-  environment.systemPackages = with pkgs; [
-    # Cela installe un SDK Android entièrement géré et patché par NixOS
-    (androidenv.composeAndroidPackages {
-      abiVersions = [ "x86_64" ];
-      includeEmulator = true;
-      includeSystemImages = true;
-      systemImageTypes = [ "google_apis_playstore" ];
-      androidVersions = [ "34" ]; # Android 14 par exemple
-      includeNDK = false;
-      useGoogleAPIs = true;
-    }).androidsdk
-  ];
 
 }
 
