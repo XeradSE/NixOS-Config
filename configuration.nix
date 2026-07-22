@@ -335,8 +335,13 @@ systemd.user.services.awww-slideshow = {
   # Pour utiliser Android Studio correctement (l'émulation)
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [
+    zlib zstd stdenv.cc.cc curl openssl attr libssh bzip2 libxml2
+    acl libsodium util-linux xz systemd icu
+
     nss
     nspr
+
+    libpulseaudio dbus expat libuuid
     # Bibliothèques graphiques et audio souvent requises par l'émulateur Android
     alsa-lib
     libGL
@@ -348,6 +353,13 @@ systemd.user.services.awww-slideshow = {
     libXi
     libXrender
     libXtst
+
+  libglvnd libdrm mesa vulkan-loader
+  libxcb libxkbcommon libXcomposite
+  libXdamage libXext
+  libXrandr libSM libICE
+
+  glib gtk2 pango cairo gdk-pixbuf
   ];
 }
 
