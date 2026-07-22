@@ -66,7 +66,10 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
    users.users.xerad = {
      isNormalUser = true;
-     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+     extraGroups = [ 
+     "wheel"
+     "libvirtd"
+     ]; # Enable ‘sudo’ for the user.
      packages = with pkgs; [
        tree
      ];
@@ -159,7 +162,7 @@
   virtualisation.libvirtd.enable = true;
 
   # 3. Autoriser ton utilisateur à gérer et lancer les machines virtuelles sans sudo
-  users.users.xerad.extraGroups = [ "libvirtd" ];
+  # Plus haut dans le groups libvirtd
 
   # 4. Activer dconf (indispensable pour que virt-manager puisse sauvegarder tes paramètres)
   programs.dconf.enable = true;
