@@ -242,6 +242,7 @@
     winetricks
     protonplus
     genymotion
+    gamescope
 
     # ----------------------------------------
     # Bureautique & Utilitaires GUI
