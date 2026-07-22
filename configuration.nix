@@ -231,7 +231,6 @@
       platformVersions = [ "34" ]; # Android 14 par exemple
       includeNDK = false;
       useGoogleAPIs = true;
-      acceptLicense = true;
     }).androidsdk
     python313
 
