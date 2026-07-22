@@ -19,6 +19,7 @@
     ".config/quickshell".source = ./dotfiles/quickshell;
     ".config/btop".source = ./dotfiles/btop;
     ".config/yazi".source = ./dotfiles/yazi;
+    ".config/nixpkgs".source = ./dotfiles/nixpkgs;
   };
 
   # Tu pourras aussi installer des paquets spécifiques à ton utilisateur ici plus tard
