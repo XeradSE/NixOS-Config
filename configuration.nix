@@ -331,24 +331,23 @@ systemd.user.services.awww-slideshow = {
   };
 };
 
-# configuration.nix
-programs.nix-ld.enable = true;
-programs.nix-ld.libraries = with pkgs; [
-  # de base
-  zlib zstd stdenv.cc.cc curl openssl attr libssh bzip2 libxml2
-  acl libsodium util-linux xz systemd icu
-
-  # spécifique à l'émulateur Android (nss = ton erreur actuelle)
-  nss nspr alsa-lib libpulseaudio dbus expat libuuid
-
-  # graphique / gfxstream
-  libGL libglvnd libdrm mesa vulkan-loader
-  xorg.libX11 xorg.libxcb xorg.libxkbcommon xorg.libXcomposite
-  xorg.libXcursor xorg.libXdamage xorg.libXext xorg.libXfixes
-  xorg.libXrandr xorg.libXtst xorg.libXi xorg.libSM xorg.libICE
-
-  glib gtk2 pango cairo gdk-pixbuf
-];
-
+  # Activation du chargeur dynamique pour les binaires non-Nix
+  # Pour utiliser Android Studio correctement (l'émulation)
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
+    nss
+    nspr
+    # Bibliothèques graphiques et audio souvent requises par l'émulateur Android
+    alsa-lib
+    libGL
+    vulkan-loader
+    libX11
+    libXcursor
+    libXext
+    libXfixes
+    libXi
+    libXrender
+    libXtst
+  ];
 }
 
