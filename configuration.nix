@@ -152,7 +152,7 @@
   # Virtualisation
   virtualisation.virtualbox.host.enable = true;
   users.extraGroups.vboxusers.members = [ "xerad" ];
-  
+  virtualisation.waydroid.enable = true;
 
   # Réseau et Connectivité
   services.tailscale.enable = true;
