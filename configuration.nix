@@ -241,8 +241,6 @@
     wineWow64Packages.staging # Wine avec support 32/64 bits
     winetricks
     protonplus
-    genymotion
-    gamescope
 
     # ----------------------------------------
     # Bureautique & Utilitaires GUI
