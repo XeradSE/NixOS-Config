@@ -364,6 +364,7 @@ systemd.user.services.awww-slideshow = {
     libXv
     libXScrnSaver
     libxshmfence
+    libQt6Sql
   ];
 }
 
