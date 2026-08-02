@@ -202,6 +202,7 @@
     bluetuith
     playerctl
     rclone
+    numworks-epsilon
 
     # ----------------------------------------
     # Environnement Hyprland (Modules)
