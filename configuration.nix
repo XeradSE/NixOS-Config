@@ -224,7 +224,6 @@
     android-studio
     python313
     clang
-    rustup
 
     # ----------------------------------------
     # Gaming (Steam)
