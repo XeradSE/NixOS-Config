@@ -222,7 +222,7 @@
     gh             # github-cli
     android-studio
     python313
-    zig
+    go
 
     # ----------------------------------------
     # Gaming (Steam)
