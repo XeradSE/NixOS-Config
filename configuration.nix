@@ -279,6 +279,11 @@
     TERMINAL = "kitty";
   };
 
+programs.direnv = {
+  enable = true;
+  nix-direnv.enable = true;
+};
+
 systemd.user.services.awww-slideshow = {
   description = "Awww Wallpaper Daemon and Slideshow";
   
