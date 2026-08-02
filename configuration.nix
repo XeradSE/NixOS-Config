@@ -224,6 +224,7 @@
     android-studio
     python313
     clang
+    cmake
 
     # ----------------------------------------
     # Gaming (Steam)
