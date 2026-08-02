@@ -225,7 +225,7 @@
     python313
     clang
     cmake
-    odin
+    lua
 
     # ----------------------------------------
     # Gaming (Steam)
