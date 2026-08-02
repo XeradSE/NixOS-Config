@@ -223,7 +223,7 @@
     gh             # github-cli
     android-studio
     python313
-    go
+    rustup
 
     # ----------------------------------------
     # Gaming (Steam)
