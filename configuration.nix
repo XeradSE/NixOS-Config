@@ -153,6 +153,13 @@
   virtualisation.virtualbox.host.enable = true;
   users.extraGroups.vboxusers.members = [ "xerad" ];
 
+  virtualisation.waydroid.enable = true;
+  # Newer kernel versions may need
+  virtualisation.waydroid.package = pkgs.waydroid-nftables;
+
+  # Enable clipboard sharing
+  environment.systemPackages = [ pkgs.wl-clipboard ];
+
   # Réseau et Connectivité
   services.tailscale.enable = true;
   hardware.bluetooth.enable = true;
