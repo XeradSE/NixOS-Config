@@ -153,10 +153,6 @@
   virtualisation.virtualbox.host.enable = true;
   users.extraGroups.vboxusers.members = [ "xerad" ];
 
-  virtualisation.waydroid.enable = true;
-  # Newer kernel versions may need
-  virtualisation.waydroid.package = pkgs.waydroid-nftables;
-
   # Réseau et Connectivité
   services.tailscale.enable = true;
   hardware.bluetooth.enable = true;
