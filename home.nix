@@ -32,18 +32,6 @@
   home.stateVersion = "26.05"; 
   programs.home-manager.enable = true;
 
-# home.nix
-  imports = [
-    # inputs.zen-browser.homeModules.beta
-    inputs.zen-browser.homeModules.twilight
-    # or inputs.zen-browser.homeModules.twilight-official
-  ];
-
-  programs.zen-browser = {
-    enable = true;
-    setAsDefaultBrowser = true;
-  };
-
 # 1. Le cœur de Zsh
   programs.zsh = {
     enable = true;
