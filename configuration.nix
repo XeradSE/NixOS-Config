@@ -226,6 +226,7 @@
     clang
     cmake
     luajit
+    zig
 
     # ----------------------------------------
     # Gaming (Steam)
