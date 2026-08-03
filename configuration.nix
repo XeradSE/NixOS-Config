@@ -225,7 +225,6 @@
     python313
     clang
     cmake
-    luajit
 
     # ----------------------------------------
     # Gaming (Steam)
