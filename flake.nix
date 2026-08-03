@@ -15,6 +15,14 @@
 
     #millennium.url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
     affinity-nix.url = "github:mrshmllow/affinity-nix";
+
+  zen-browser = {
+    url = "github:0xc000022070/zen-browser-flake";
+    inputs = {
+      # IMPORTANT: To ensure compatibility with the latest Firefox version, use nixpkgs-unstable.
+      nixpkgs.follows = "nixpkgs";
+      home-manager.follows = "home-manager";
+    };
   };
 
   # Ce que ton Flake va générer en sortie
