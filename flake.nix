@@ -24,6 +24,7 @@
       home-manager.follows = "home-manager";
     };
   };
+  };
 
   # Ce que ton Flake va générer en sortie
   outputs = { self, nixpkgs, affinity-nix, ... }@inputs: {
@@ -88,5 +89,4 @@
   };
     };
   };
-};
 }
