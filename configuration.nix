@@ -264,6 +264,7 @@
     megabasterd
     davinci-resolve
     obs-studio
+    libreoffice
     
     # ----------------------------------------
     # Multimédia
