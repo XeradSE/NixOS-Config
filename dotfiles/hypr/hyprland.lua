@@ -28,7 +28,7 @@ hl.on("hyprland.start", function()
 	)
 
 	-- Services d'arrière-plan
-  hl.exec_cmd("sunshine &")
+	hl.exec_cmd("sunshine &")
 	hl.exec_cmd("systemctl --user start hyprpolkitagent")
 
 	-- Lancement des applications de ta forge
@@ -60,11 +60,13 @@ hl.config({
 		gaps_in = 3,
 		gaps_out = 5,
 		border_size = 2,
-		["col.active_border"] = {
-			colors = { "rgba(900048ff)", "rgba(ff00ffff)", "rgba(8a2be2ff)" },
-			angle = 45,
-		},
-		["col.inactive_border"] = "rgba(313244aa)",
+		--["col.active_border"] = {
+		--colors = { "rgba(900048ff)", "rgba(ff00ffff)", "rgba(8a2be2ff)" },
+		--andangle = 45,
+		--},
+		--["col.inactive_border"] = "rgba(313244aa)",
+		["col.active_border"] = rgb(F7003F),
+		["col.inactive_border"] = rgb(1E1E1E),
 		resize_on_border = false,
 		allow_tearing = false,
 		layout = "dwindle",
