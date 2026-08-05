@@ -17,7 +17,6 @@
     ".config/mako".source = ./dotfiles/mako;
     ".config/wofi".source = ./dotfiles/wofi;
     ".config/quickshell".source = ./dotfiles/quickshell;
-    ".config/btop".source = ./dotfiles/btop;
     ".config/yazi".source = ./dotfiles/yazi;
     ".config/nixpkgs".source = ./dotfiles/nixpkgs;
   };

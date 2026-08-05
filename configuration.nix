@@ -196,7 +196,7 @@
   environment.systemPackages = with pkgs; [
     # ----------------------------------------
     # Terminal & Utilitaires CLI
-    wget fd fzf ripgrep jq zoxide btop fastfetch
+    wget fd fzf ripgrep jq zoxide bottom fastfetch
     p7zip unrar eza # eza remplace avantageusement ls
     wl-clipboard xdotool ydotool yad kitty yazi nano
     bluetuith
