@@ -1,12 +1,12 @@
 return {
   -- add gruvbox
-  { "catppuccin/nvim" },
+  { "webhooked/kanso.nvim" },
 
   -- Configure LazyVim to load gruvbox
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "catppuccin",
+      colorscheme = "kanso",
     },
   },
 }
