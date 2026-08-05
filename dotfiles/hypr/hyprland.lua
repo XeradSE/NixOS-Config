@@ -61,10 +61,10 @@ hl.config({
 		gaps_out = 5,
 		border_size = 2,
 		["col.active_border"] = {
-			colors = { "rgba(ffffffff)", "rgba(000000ff)" },
+			colors = { "rgba(ffffffff)" },
 			angle = 45,
 		},
-		["col.inactive_border"] = "rgba(313244aa)",
+		["col.inactive_border"] = "rgba(000000ff)",
 		resize_on_border = false,
 		allow_tearing = false,
 		layout = "dwindle",
