@@ -52,9 +52,12 @@
             home-manager.users.xerad = import ./home.nix;
           }
 
-          ({ pkgs, ... }: {
+          ({ pkgs, inputs, ... }: {
               nixpkgs.overlays = [ affinity-nix.overlays.default ];
-              environment.systemPackages = [ pkgs.affinity-v3 ];
+              environment.systemPackages = [ 
+                pkgs.affinity-v3
+                inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
+              ];
             })
         ];
       };
@@ -76,16 +79,15 @@
         home-manager.users.xerad = import ./home.nix;
       }
 
-          ({ pkgs, ... }: {
+          ({ pkgs, inputs, ... }: {
               nixpkgs.overlays = [ affinity-nix.overlays.default ];
-              environment.systemPackages = [ pkgs.affinity-v3 ];
+              environment.systemPackages = [ 
+                pkgs.affinity-v3
+                inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
+              ];
             })
     ];
   };
     };
   };
-}: {
-  environment.systemPackages = [
-    inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
-  ];
 }
