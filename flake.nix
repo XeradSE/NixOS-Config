@@ -15,10 +15,6 @@
 
     #millennium.url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
     affinity-nix.url = "github:mrshmllow/affinity-nix";
-    zen-browser = {
-      url = "github:youwen5/zen-browser-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   # Ce que ton Flake va générer en sortie
@@ -56,7 +52,6 @@
               nixpkgs.overlays = [ affinity-nix.overlays.default ];
               environment.systemPackages = [ 
                 pkgs.affinity-v3
-                inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
               ];
             })
         ];
@@ -83,7 +78,6 @@
               nixpkgs.overlays = [ affinity-nix.overlays.default ];
               environment.systemPackages = [ 
                 pkgs.affinity-v3
-                inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
               ];
             })
     ];
