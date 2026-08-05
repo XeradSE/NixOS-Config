@@ -249,7 +249,6 @@
     # ----------------------------------------
     # Bureautique & Utilitaires GUI
     vivaldi
-    kdePackages.okular
     kdePackages.gwenview
     gnome-disk-utility
     localsend
