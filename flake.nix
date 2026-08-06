@@ -20,7 +20,7 @@
   };
 
   # Ce que ton Flake va générer en sortie
-  outputs = { self, nixpkgs, affinity-nix, ... }@inputs: {
+  outputs = { self, nixpkgs, affinity-nix, nix-flatpak , ... }@inputs: {
     
     # La configuration des machines
     nixosConfigurations = {
