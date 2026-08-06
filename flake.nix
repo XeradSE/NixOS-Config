@@ -15,6 +15,8 @@
 
     #millennium.url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
     affinity-nix.url = "github:mrshmllow/affinity-nix";
+    # Le module magique pour gérer Flatpak
+    nix-flatpak.url = "github:gmodena/nix-flatpak";
   };
 
   # Ce que ton Flake va générer en sortie
@@ -35,6 +37,8 @@
           ./hardware-laptop.nix
           ./configuration.nix
           ./laptop.nix
+          # On charge le module ici
+          nix-flatpak.nixosModules.nix-flatpak
 
 	  # + On active le module Home Manager
           inputs.home-manager.nixosModules.home-manager
@@ -65,6 +69,8 @@
       ./hardware-desktop.nix # Le hardware scanné sur la tour
       ./configuration.nix    # Le MÊME socle commun
       ./desktop.nix          # 🔥 Le fichier contenant tes règles uniques au fixe
+      # On charge le module ici
+      nix-flatpak.nixosModules.nix-flatpak
       
       inputs.home-manager.nixosModules.home-manager
       {

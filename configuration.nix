@@ -174,7 +174,27 @@
   };
 
   # Divers
-  services.flatpak.enable = true;
+  services.flatpak = {
+    enable = true;
+  
+  # On s'assure que le dépôt officiel Flathub est bien présent
+  remotes = [{
+    name = "flathub";
+    location = "https://dl.flathub.org/repo/flathub.flatpakrepo";
+  }];
+  
+  # Ta liste d'applications déclaratives (utilise l'ID complet)
+  packages = [
+    "com.github.tchx84.Flatseal"
+    "org.jdownloader.JDownloader"
+  ];
+  
+  # Bonus : mettre à jour les Flatpaks automatiquement en tâche de fond
+  update.auto = {
+    enable = true;
+    onCalendar = "weekly";
+  };
+  };
   services.gvfs.enable = true; # Pour la corbeille et le montage USB
   # no longer needed - programs.adb.enable = true;  # Remplace android-udev
 
