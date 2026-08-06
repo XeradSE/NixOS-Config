@@ -20,6 +20,10 @@
     ".config/btop".source = ./dotfiles/btop;
     ".config/yazi".source = ./dotfiles/yazi;
     ".config/nixpkgs".source = ./dotfiles/nixpkgs;
+    "Pictures/Wallpapers" = {
+      source = ./dotfiles/Wallpapers;
+      recursive = true; # Le dossier n'est plus en lecteur seul, peut être utilisé pour des tests de fonds d'écrans ou autres
+    };
   };
 
   # Tu pourras aussi installer des paquets spécifiques à ton utilisateur ici plus tard
