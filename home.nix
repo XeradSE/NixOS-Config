@@ -21,7 +21,7 @@
     ".config/yazi".source = ./dotfiles/yazi;
     ".config/nixpkgs".source = ./dotfiles/nixpkgs;
     "Pictures/Wallpapers" = {
-      source = ./dotfiles/Wallpapers;
+      source = ./dotfiles/wallpapers;
       recursive = true; # Le dossier n'est plus en lecteur seul, peut être utilisé pour des tests de fonds d'écrans ou autres
     };
   };
