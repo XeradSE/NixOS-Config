@@ -194,17 +194,6 @@
     enable = true;
     onCalendar = "weekly";
   };
-
-    overrides = {
-    "org.jdownloader.JDownloader" = {
-        Context = {
-      filesystems = [
-        "xdg-download" # Donne accès au dossier Téléchargements officiel
-        # "/chemin/vers/un/autre/disque" # Si tu as un disque dur secondaire
-      ];
-    };
-      };
-      };
   };
   services.gvfs.enable = true; # Pour la corbeille et le montage USB
   # no longer needed - programs.adb.enable = true;  # Remplace android-udev
