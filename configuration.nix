@@ -342,7 +342,7 @@ systemd.user.services.awww-slideshow = {
 
     # Boucle du diaporama
     while true; do
-      FICHIER=$(find "$DOSSIER" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.webp" \) | shuf -n 1)
+      FICHIER=$(find -L "$DOSSIER" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.webp" \) | shuf -n 1)
 
       if [ -n "$FICHIER" ]; then
         awww img "$FICHIER" --transition-type wipe --transition-angle 30 --transition-fps 60 >/dev/null 2>&1
