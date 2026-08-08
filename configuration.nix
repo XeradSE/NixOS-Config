@@ -286,7 +286,7 @@
     vlc
     imagemagick
     cava
-    youtube-music
+    pear-desktop # youtube-music
   ];
 
   hardware.graphics = {
