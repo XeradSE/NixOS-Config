@@ -285,6 +285,7 @@
     vlc
     imagemagick
     cava
+    ncmpcpp
   ];
 
   hardware.graphics = {
