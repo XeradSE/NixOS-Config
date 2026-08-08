@@ -187,6 +187,7 @@
   packages = [
     "com.github.tchx84.Flatseal"
     "org.jdownloader.JDownloader"
+    "dev.aunetx.deezer"
   ];
   
   # Bonus : mettre à jour les Flatpaks automatiquement en tâche de fond
