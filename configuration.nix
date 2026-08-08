@@ -285,7 +285,7 @@
     vlc
     imagemagick
     cava
-    ncmpcpp
+    youtube-music
   ];
 
   hardware.graphics = {
@@ -395,30 +395,5 @@ systemd.user.services.awww-slideshow = {
     libXScrnSaver
     libxshmfence
   ];
-
-  services.mopidy = {
-    enable = true;
-    extensionPackages = with pkgs; [
-      mopidy-mpd
-      # mopidy-deezer
-      mopidy-ytmusic
-    ];
-
-    settings = {
-      mdp = {
-        enabled = true;
-        hostname = "127.0.0.1";
-        port = 6600;
-      };
-      # deezer = {
-      #   enabled = true;
-      #   arl = "TON_TOKEN_SECRET_DEEZER"; # Les chaînes de caractères doivent être entre guillemets
-      # };
-      ytmusic = {
-        enabled = true;
-        auth_json = "/var/lib/mopidy/oauth.json";
-      };
-    };
-  };
 }
 
