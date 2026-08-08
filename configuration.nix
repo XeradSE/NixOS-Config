@@ -396,12 +396,12 @@ systemd.user.services.awww-slideshow = {
     libxshmfence
   ];
 
-  services.modipy = {
+  services.mopidy = {
     enable = true;
     extensionPackages = with pkgs; [
-      modipy-mod
-      # modipy-deezer
-      modipy-youtube
+      mopidy-mod
+      # mopidy-deezer
+      mopidy-youtube
     ];
 
     configuration = ''
