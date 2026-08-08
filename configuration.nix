@@ -401,7 +401,7 @@ systemd.user.services.awww-slideshow = {
     extensionPackages = with pkgs; [
       mopidy-mpd
       # mopidy-deezer
-      mopidy-youtube
+      mopidy-ytmusic
     ];
 
     settings = {
@@ -414,6 +414,10 @@ systemd.user.services.awww-slideshow = {
       #   enabled = true;
       #   arl = "TON_TOKEN_SECRET_DEEZER"; # Les chaînes de caractères doivent être entre guillemets
       # };
+      ytmusic = {
+        enabled = true;
+        auth_json = "/home/xerad/.config/mopidy/oauth.json";
+      };
     };
   };
 }
