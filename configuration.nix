@@ -394,5 +394,25 @@ systemd.user.services.awww-slideshow = {
     libXScrnSaver
     libxshmfence
   ];
+
+  services.modipy = {
+    enable = true;
+    extensionPackages = with pkgs; [
+      modipy-mod
+      # modipy-deezer
+      modipy-youtube
+    ];
+
+    configuration = ''
+      [mpd]
+      enabled = true
+      hostname = 127.0.0.1
+      port = 6600
+
+      # [deezer]
+      # enabled = true
+      # arl = TON_TOKEN_SECRET_DEEZER
+    '';
+  };
 }
 
