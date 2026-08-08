@@ -399,7 +399,7 @@ systemd.user.services.awww-slideshow = {
   services.mopidy = {
     enable = true;
     extensionPackages = with pkgs; [
-      mopidy-mod
+      mopidy-mpd
       # mopidy-deezer
       mopidy-youtube
     ];
