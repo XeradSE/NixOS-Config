@@ -416,7 +416,7 @@ systemd.user.services.awww-slideshow = {
       # };
       ytmusic = {
         enabled = true;
-        auth_json = "/home/xerad/.config/mopidy/oauth.json";
+        auth_json = "/var/lib/mopidy/oauth.json";
       };
     };
   };
