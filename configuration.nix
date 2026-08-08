@@ -404,16 +404,17 @@ systemd.user.services.awww-slideshow = {
       mopidy-youtube
     ];
 
-    configuration = ''
-      [mpd]
-      enabled = true
-      hostname = 127.0.0.1
-      port = 6600
-
-      # [deezer]
-      # enabled = true
-      # arl = TON_TOKEN_SECRET_DEEZER
-    '';
+    settings = {
+      mdp = {
+        enabled = true;
+        hostname = "127.0.0.1";
+        port = 6600;
+      };
+      # deezer = {
+      #   enabled = true;
+      #   arl = "TON_TOKEN_SECRET_DEEZER"; # Les chaînes de caractères doivent être entre guillemets
+      # };
+    };
   };
 }
 
