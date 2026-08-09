@@ -280,6 +280,7 @@
     davinci-resolve
     obs-studio
     libreoffice
+    discord
     
     # ----------------------------------------
     # Multimédia
