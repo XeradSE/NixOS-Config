@@ -135,7 +135,7 @@ hl.config({
 	},
 
 	input = {
-		kb_layout = "fr,us",
+		kb_layout = "fr",
 		follow_mouse = 1,
 		sensitivity = 0,
 		touchpad = {
