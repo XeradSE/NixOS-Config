@@ -247,7 +247,6 @@
     clang
     cmake
     luajit
-    wp-cli
 
     # ----------------------------------------
     # Gaming (Steam)
