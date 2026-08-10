@@ -7,7 +7,7 @@ import Quickshell.Widgets
 PanelWindow {
     id: topBar
 
-    color: "#00000021"
+    color: "#00000054"
 
     anchors {
       top: true
