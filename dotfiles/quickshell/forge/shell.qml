@@ -7,7 +7,7 @@ import Quickshell.Widgets
 PanelWindow {
     id: topBar
 
-    color: "#00000054"
+    color: "transparent"
 
     anchors {
       top: true
@@ -23,6 +23,11 @@ PanelWindow {
     }
     
     height: 30
+
+    Rectangle {
+      anchors.fill: parent
+      color: Qt.rgba(0, 0, 0, 0.33)
+    }
 
     // =====================================
     // ZONE GAUCHE (Alignement horizontal)
