@@ -223,7 +223,7 @@
     bluetuith
     playerctl
     rclone
-    numworks-epsilon
+    killall
 
     # ----------------------------------------
     # Environnement Hyprland (Modules)
@@ -279,6 +279,7 @@
     megabasterd
     davinci-resolve
     obs-studio
+    numworks-epsilon
     libreoffice
     discord
     
