@@ -10,9 +10,9 @@ font=JetBrainsMonoNF-Regular Font 10
 markup=1
 
 # Couleurs (Thème sombre avec bordure magenta/bordeaux)
-background-color=#1a1b26
-text-color=#bb9af7
-border-color=#a200a2
+background-color=#000000
+text-color=#ffffff
+border-color=#ffffff
 border-size=2
 border-radius=5
 
