@@ -223,7 +223,7 @@
     bluetuith
     playerctl
     rclone
-    killall
+    psmisc
 
     # ----------------------------------------
     # Environnement Hyprland (Modules)
