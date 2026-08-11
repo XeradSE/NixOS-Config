@@ -282,6 +282,7 @@
     numworks-epsilon
     libreoffice
     discord
+    obsidian
     
     # ----------------------------------------
     # Multimédia
