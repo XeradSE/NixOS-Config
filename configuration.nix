@@ -282,7 +282,7 @@
     numworks-epsilon
     libreoffice
     discord
-    obsidian
+    telegram-desktop
     
     # ----------------------------------------
     # Multimédia
