@@ -293,6 +293,7 @@
     imagemagick
     cava
     pear-desktop # youtube-music
+    dolphin
   ];
 
   hardware.graphics = {
