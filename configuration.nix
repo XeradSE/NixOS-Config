@@ -293,7 +293,6 @@
     imagemagick
     cava
     pear-desktop # youtube-music
-    kdePackages.dolphin
   ];
 
   hardware.graphics = {
