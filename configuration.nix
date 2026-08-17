@@ -257,6 +257,9 @@
     xrandr
     xxd
     xwininfo
+    # En fait je vais utiliser le paquet nix
+    steamtinkerlaunch
+    cabextract
 
     # ----------------------------------------
     # Gaming (Hors Steam)
