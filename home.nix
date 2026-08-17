@@ -103,4 +103,15 @@
     x11.enable = true; 
   };
 
+  programs.git = {
+    enable = true;
+    userName = "Kylian Betuel";
+    userEmail = "betuelkylian17@gmail.com";
+
+    extraConfig = {
+      credential."https://github.com" = {
+        helper = "!gh auth git-credential";
+      };
+    };
+  };
 }
