@@ -286,6 +286,7 @@
     libreoffice
     discord
     telegram-desktop
+    whatsie
     
     # ----------------------------------------
     # Multimédia
