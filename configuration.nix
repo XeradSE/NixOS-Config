@@ -287,7 +287,6 @@
     discord
     telegram-desktop
     whatsie
-kdePackages.kdenlive
     
     # ----------------------------------------
     # Multimédia
