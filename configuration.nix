@@ -136,6 +136,19 @@
   
   # Gaming (Steam installe automatiquement les lib32, Proton, et Gamescope)
   #nixpkgs.overlays = [ inputs.millennium.overlays.default ];
+nixpkgs.overlays = [
+  (final: prev: {
+    davinci-resolve = prev.davinci-resolve.overrideAttrs (old: {
+      postFixup = (old.postFixup or "") + ''
+        for bin in $out/bin/resolve $out/bin/davinci-resolve; do
+          if [ -f "$bin" ]; then
+            wrapProgram "$bin" --set QT_QPA_PLATFORM xcb
+          fi
+        done
+      '';
+    });
+  })
+];
   programs.steam = {
     enable = true;
     remotePlay.openFirewall = true;
