@@ -105,10 +105,10 @@
 
   programs.git = {
     enable = true;
-    userName = "Kylian Betuel";
-    userEmail = "betuelkylian17@gmail.com";
+    settings.user.name = "Kylian Betuel";
+    settings.user.email = "betuelkylian17@gmail.com";
 
-    extraConfig = {
+    settings = {
       credential."https://github.com" = {
         helper = "!gh auth git-credential";
       };
