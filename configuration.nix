@@ -214,6 +214,18 @@
   # ==========================================
   # 3. PAQUETS SYSTÈME GLOBAUX
   # ==========================================
+
+let
+  davinciResolveWrapped = pkgs.symlinkJoin {
+    name = "davinci-resolve-wrapped";
+    paths = [ pkgs.davinci-resolve ];
+    nativeBuildInputs = [ pkgs.makeWrapper ];
+    postBuild = ''
+      wrapProgram $out/bin/davinci-resolve --set QT_QPA_PLATFORM xcb
+    '';
+  };
+in
+{
   environment.systemPackages = with pkgs; [
     # ----------------------------------------
     # Terminal & Utilitaires CLI
@@ -280,10 +292,7 @@
     # not in the nixos packets, but in flatpak - jdownloader
     papirus-icon-theme
     megabasterd
-    (writeShellScriptBin "davinci-resolve" ''
-    export QT_QPA_PLATFORM=xcb
-    exec ${pkgs.davinci-resolve}/bin/davinci-resolve "$@"
-    '')
+    davinciResolveWrapped
     obs-studio
     numworks-epsilon
     libreoffice
@@ -298,6 +307,7 @@
     cava
     pear-desktop # youtube-music
   ];
+}
 
   hardware.graphics = {
   	enable = true;
