@@ -4,6 +4,16 @@
 
 { config, lib, pkgs, ... }:
 
+let
+  davinciResolveWrapped = pkgs.symlinkJoin {
+    name = "davinci-resolve-wrapped";
+    paths = [ pkgs.davinci-resolve ];
+    nativeBuildInputs = [ pkgs.makeWrapper ];
+    postBuild = ''
+      wrapProgram $out/bin/davinci-resolve --set QT_QPA_PLATFORM xcb
+    '';
+  };
+in
 {
   imports =
     [ # Include the results of the hardware scan.
@@ -214,18 +224,6 @@
   # ==========================================
   # 3. PAQUETS SYSTÈME GLOBAUX
   # ==========================================
-
-let
-  davinciResolveWrapped = pkgs.symlinkJoin {
-    name = "davinci-resolve-wrapped";
-    paths = [ pkgs.davinci-resolve ];
-    nativeBuildInputs = [ pkgs.makeWrapper ];
-    postBuild = ''
-      wrapProgram $out/bin/davinci-resolve --set QT_QPA_PLATFORM xcb
-    '';
-  };
-in
-{
   environment.systemPackages = with pkgs; [
     # ----------------------------------------
     # Terminal & Utilitaires CLI
@@ -307,7 +305,6 @@ in
     cava
     pear-desktop # youtube-music
   ];
-}
 
   hardware.graphics = {
   	enable = true;
@@ -417,4 +414,4 @@ systemd.user.services.awww-slideshow = {
     libxshmfence
   ];
 }
-
+}
