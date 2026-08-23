@@ -414,4 +414,3 @@ systemd.user.services.awww-slideshow = {
     libxshmfence
   ];
 }
-}
