@@ -136,19 +136,6 @@
   
   # Gaming (Steam installe automatiquement les lib32, Proton, et Gamescope)
   #nixpkgs.overlays = [ inputs.millennium.overlays.default ];
-nixpkgs.overlays = [
-  (final: prev: {
-    davinci-resolve = prev.davinci-resolve.overrideAttrs (old: {
-      postFixup = (old.postFixup or "") + ''
-        for bin in $out/bin/resolve $out/bin/davinci-resolve; do
-          if [ -f "$bin" ]; then
-            wrapProgram "$bin" --set QT_QPA_PLATFORM xcb
-          fi
-        done
-      '';
-    });
-  })
-];
   programs.steam = {
     enable = true;
     remotePlay.openFirewall = true;
@@ -293,7 +280,10 @@ nixpkgs.overlays = [
     # not in the nixos packets, but in flatpak - jdownloader
     papirus-icon-theme
     megabasterd
-    davinci-resolve
+    (writeShellScriptBin "davinci-resolve" ''
+    export QT_QPA_PLATFORM=xcb
+    exec ${pkgs.davinci-resolve}/bin/davinci-resolve "$@"
+    '')
     obs-studio
     numworks-epsilon
     libreoffice
