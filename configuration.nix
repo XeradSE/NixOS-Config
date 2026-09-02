@@ -234,6 +234,7 @@ in
     wl-clipboard xdotool ydotool yad kitty yazi nano
     bluetuith
     impala
+    nm-applet
     playerctl
     rclone
     psmisc
