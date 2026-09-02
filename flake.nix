@@ -57,6 +57,7 @@
               nixpkgs.overlays = [ affinity-nix.overlays.default ];
               environment.systemPackages = [ 
                 pkgs.affinity-v3
+                inputs.wlctl.packages.${pkgs.system}.default
               ];
             })
         ];
@@ -85,6 +86,7 @@
               nixpkgs.overlays = [ affinity-nix.overlays.default ];
               environment.systemPackages = [ 
                 pkgs.affinity-v3
+                inputs.wlctl.packages.${pkgs.system}.default
               ];
             })
     ];

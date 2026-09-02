@@ -255,6 +255,22 @@
         "type": "github"
       }
     },
+    "nixpkgs_5": {
+      "locked": {
+        "lastModified": 1782847189,
+        "narHash": "sha256-twXPFqFsrrY5r28Zh7Homgcp2gUMBgQ6WDS98Q/3xFI=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "b6018f87da91d19d0ab4cf979885689b469cdd41",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-25.11",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "on-linux": {
       "flake": false,
       "locked": {
@@ -293,7 +309,8 @@
         "affinity-nix": "affinity-nix",
         "home-manager": "home-manager",
         "nix-flatpak": "nix-flatpak",
-        "nixpkgs": "nixpkgs_4"
+        "nixpkgs": "nixpkgs_4",
+        "wlctl": "wlctl"
       }
     },
     "treefmt-nix": {
@@ -311,6 +328,24 @@
       "original": {
         "owner": "numtide",
         "repo": "treefmt-nix",
+        "type": "github"
+      }
+    },
+    "wlctl": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_5"
+      },
+      "locked": {
+        "lastModified": 1788059764,
+        "narHash": "sha256-ekrzW0MF8umqEopkcM1NCruC6X2G5nf3wQCVYzG+yAs=",
+        "owner": "aashish-thapa",
+        "repo": "wlctl",
+        "rev": "8a885dbbdf76e1b3ace99912f0f6f6ccfe53e0b8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "aashish-thapa",
+        "repo": "wlctl",
         "type": "github"
       }
     }
