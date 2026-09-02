@@ -234,6 +234,7 @@ in
     wl-clipboard xdotool ydotool yad kitty yazi nano
     bluetuith
     networkmanagerapplet
+    inputs.wlctl.packages.${pkgs.system}.default
     playerctl
     rclone
     psmisc

@@ -17,10 +17,11 @@
     affinity-nix.url = "github:mrshmllow/affinity-nix";
     # Le module magique pour gérer Flatpak
     nix-flatpak.url = "github:gmodena/nix-flatpak";
+    wlctl.url = "github:aashish-thapa/wlctl";
   };
 
   # Ce que ton Flake va générer en sortie
-  outputs = { self, nixpkgs, affinity-nix, nix-flatpak , ... }@inputs: {
+  outputs = { self, nixpkgs, affinity-nix, nix-flatpak, wlctl, ... }@inputs: {
     
     # La configuration des machines
     nixosConfigurations = {
