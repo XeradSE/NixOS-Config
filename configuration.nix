@@ -233,7 +233,6 @@ in
     p7zip unrar eza # eza remplace avantageusement ls
     wl-clipboard xdotool ydotool yad kitty yazi nano
     bluetuith
-    networkmanagerapplet
     playerctl
     rclone
     psmisc
