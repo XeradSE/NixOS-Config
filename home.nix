@@ -24,6 +24,7 @@
       source = ./dotfiles/wallpapers;
       recursive = true; # Le dossier n'est plus en lecteur seul, peut être utilisé pour des tests de fonds d'écrans ou autres
     };
+    "/".source = ./dotfiles/etc;
   };
 
   # Tu pourras aussi installer des paquets spécifiques à ton utilisateur ici plus tard
