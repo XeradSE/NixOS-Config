@@ -255,9 +255,7 @@ in
     git
     gh             # github-cli
     android-studio
-    (python313.withPackages (ps: with ps; [
-      django
-    ])
+    python313
     clang
     cmake
     luajit
