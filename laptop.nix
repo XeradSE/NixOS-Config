@@ -7,6 +7,6 @@
 
   environment.systemPackages = with pkgs; [
     moonlight-qt
-    acpid
+    tlp
   ];
 }
