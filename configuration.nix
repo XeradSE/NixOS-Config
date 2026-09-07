@@ -261,6 +261,7 @@ in
     clang
     cmake
     luajit
+    kubernetes
 
     # ----------------------------------------
     # Gaming (Steam)
