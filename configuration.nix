@@ -256,12 +256,10 @@ in
     beekeeper-studio
     git
     gh             # github-cli
-    android-studio
     python313
     clang
     cmake
     luajit
-    kubernetes
 
     # ----------------------------------------
     # Gaming (Steam)
