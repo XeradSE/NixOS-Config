@@ -259,7 +259,6 @@ in
     clang
     cmake
     luajit
-    sqlite
 
     # ----------------------------------------
     # Gaming (Steam)
