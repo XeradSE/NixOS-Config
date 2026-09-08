@@ -254,7 +254,8 @@ in
     neovim
     vscodium
     git
-    gh             # github-cli
+    gh
+    glab
     python313
     clang
     cmake
