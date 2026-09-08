@@ -253,7 +253,7 @@ in
     # Développement & Outils
     neovim
     vscodium
-    beekeeper-studio
+    dbeaver-bin
     git
     gh             # github-cli
     python313
