@@ -260,7 +260,6 @@ in
     clang
     cmake
     luajit
-    kdePackages.kdenlive
 
     # ----------------------------------------
     # Gaming (Steam)
