@@ -48,7 +48,7 @@
   shellAliases = {
       ll = "ls -lA";
       # $(hostname) récupère automatiquement le nom de la machine en cours
-      update = "sudo nixos-rebuild switch --flake ~/nixos-config#$(hostname)";
+      update = "sudo nixos-rebuild boot --flake ~/nixos-config#$(hostname)";
       cd = "z"; 
     };
 
