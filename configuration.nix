@@ -238,6 +238,7 @@ in
     playerctl
     rclone
     psmisc
+    zzz
 
     # ----------------------------------------
     # Environnement Hyprland (Modules)
