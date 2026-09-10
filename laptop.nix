@@ -30,7 +30,7 @@ services.tlp = {
     moonlight-qt
   ];
 services.logind.settings.Login = {
-  HandleLidSwitch = "zzz";
+  HandleLidSwitch = "hibernate";
   HandleLidSwitchExternalPower = "lock";
   HandleLidSwitchDocked = "ignore";
 };
