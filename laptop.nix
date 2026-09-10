@@ -29,6 +29,11 @@ services.tlp = {
   environment.systemPackages = with pkgs; [
     moonlight-qt
   ];
-
+services.logind.settings.Login = {
+  HandleLidSwitch = "zzz";
+  HandleLidSwitchExternalPower = "lock";
+  HandleLidSwitchDocked = "ignore";
+};
+# one of "ignore", "poweroff", "reboot", "halt", "kexec", "suspend", "hibernate", "hybrid-sleep", "suspend-then-hibernate", "lock"
 
 }
