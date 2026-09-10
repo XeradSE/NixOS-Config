@@ -54,7 +54,11 @@ in
   # Enable the X11 windowing system.
   # services.xserver.enable = true;
 
-  
+  services.logind.settings.Login = {
+    HandleLidSwitch = "zzz";
+    HandleLidSwitchExternalPower = "lock";
+    HandleLidSwitchDocked = "ignore";
+  };
   
 
   # Configure keymap in X11
