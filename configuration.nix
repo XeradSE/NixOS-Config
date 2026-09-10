@@ -55,7 +55,7 @@ in
   # services.xserver.enable = true;
 
   services.logind.settings.Login = {
-    HandleLidSwitch = "zzz";
+    HandleLidSwitch = "hibernate";
     HandleLidSwitchExternalPower = "lock";
     HandleLidSwitchDocked = "ignore";
   };
