@@ -260,6 +260,7 @@ in
     clang
     cmake
     luajit
+    rPackages.SPARQL
 
     # ----------------------------------------
     # Gaming (Steam)
