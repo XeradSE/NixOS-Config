@@ -307,6 +307,7 @@ in
     imagemagick
     cava
     pear-desktop # youtube-music
+    ruffle
   ];
 
   hardware.graphics = {
