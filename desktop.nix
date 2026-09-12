@@ -1,7 +1,9 @@
 { config, pkgs, ... }:
 
 {
-  boot.kernelPackages = pkgs.linuxPackages_zen;
+  # boot.kernelPackages = pkgs.linuxPackages_zen;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+
   # Connecte l'utilisateur xerad automatiquement sur le TTY1
   services.getty.autologinUser = "xerad";
 
