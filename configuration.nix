@@ -24,8 +24,8 @@ in
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   
-# Exemple avec l'agent gnome (très stable)
-environment.systemPackages = [ pkgs.polkit_gnome ];
+  # Exemple avec l'agent gnome (très stable)
+  environment.systemPackages = [ pkgs.polkit_gnome ];
 
 # Et dans ton gestionnaire de fenêtres / autostart de Hyprland, lance-le :
 # exec-once = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1"
@@ -173,9 +173,6 @@ environment.systemPackages = [ pkgs.polkit_gnome ];
 
   virtualisation.libvirtd.enable = true;
   programs.virt-manager.enable = true;
-
-  # Exemple avec l'agent gnome (très stable)
-  environment.systemPackages = [ pkgs.polkit_gnome ];
 
   # Réseau et Connectivité
   services.tailscale.enable = true;
