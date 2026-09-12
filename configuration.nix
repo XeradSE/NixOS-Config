@@ -165,8 +165,8 @@ in
   programs.fish.enable = true; # Si tu utilises fish en alternative
 
   # Virtualisation
-  virtualisation.virtualbox.host.enable = true;
-  users.extraGroups.vboxusers.members = [ "xerad" ];
+  # virtualisation.virtualbox.host.enable = true;
+  # users.extraGroups.vboxusers.members = [ "xerad" ];
 
   virtualisation.libvirtd.enable = true;
   programs.virt-manager.enable = true;
