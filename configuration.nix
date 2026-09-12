@@ -166,6 +166,12 @@ in
   virtualisation.virtualbox.host.enable = true;
   users.extraGroups.vboxusers.members = [ "xerad" ];
 
+  virtualisation.libvirtd.enable = true;
+  programs.virt-manager.enable = true;
+
+  # Pour autoriser ton utilisateur à gérer les VM sans root
+  users.users.xerad.extraGroups = [ "libvirtd" "kvm" ];
+
   # Réseau et Connectivité
   services.tailscale.enable = true;
   hardware.bluetooth.enable = true;
