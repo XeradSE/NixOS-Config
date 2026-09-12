@@ -244,6 +244,7 @@ in
     psmisc
     zzz
     polkit_gnome
+    virtiofsd
 
     # ----------------------------------------
     # Environnement Hyprland (Modules)
