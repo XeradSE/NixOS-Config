@@ -23,9 +23,6 @@ in
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  
-  # Exemple avec l'agent gnome (très stable)
-  environment.systemPackages = [ pkgs.polkit_gnome ];
 
 # Et dans ton gestionnaire de fenêtres / autostart de Hyprland, lance-le :
 # exec-once = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1"
@@ -246,6 +243,7 @@ in
     rclone
     psmisc
     zzz
+    polkit_gnome
 
     # ----------------------------------------
     # Environnement Hyprland (Modules)
