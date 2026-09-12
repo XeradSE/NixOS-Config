@@ -244,7 +244,6 @@ in
     mako           # Notifications
     wofi           # Lanceur d'applications
     grim slurp swappy # Capture d'écran (remplace xorg-tools)
-    brightnessctl  # Luminosité
     quickshell
     oh-my-zsh
     pwvucontrol
