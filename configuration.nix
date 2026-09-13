@@ -165,11 +165,11 @@ in
   programs.fish.enable = true; # Si tu utilises fish en alternative
 
   # Virtualisation
-  # virtualisation.virtualbox.host.enable = true;
-  # users.extraGroups.vboxusers.members = [ "xerad" ];
+  virtualisation.virtualbox.host.enable = true;
+  users.extraGroups.vboxusers.members = [ "xerad" ];
 
-  virtualisation.libvirtd.enable = true;
-  programs.virt-manager.enable = true;
+  # virtualisation.libvirtd.enable = true;
+  # programs.virt-manager.enable = true;
 
   # Réseau et Connectivité
   services.tailscale.enable = true;
@@ -244,7 +244,6 @@ in
     psmisc
     zzz
     polkit_gnome
-    virtiofsd
 
     # ----------------------------------------
     # Environnement Hyprland (Modules)
