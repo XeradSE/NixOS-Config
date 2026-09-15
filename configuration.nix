@@ -253,6 +253,7 @@ in
     quickshell
     oh-my-zsh
     pwvucontrol
+    moonlight-qt
 
     # ----------------------------------------
     # Développement & Outils
