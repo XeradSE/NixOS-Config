@@ -168,8 +168,8 @@ in
   # virtualisation.virtualbox.host.enable = true;
   # users.extraGroups.vboxusers.members = [ "xerad" ];
 
-  virtualisation.libvirtd.enable = true;
-  programs.virt-manager.enable = true;
+  # virtualisation.libvirtd.enable = true;
+  # programs.virt-manager.enable = true;
 
   # Réseau et Connectivité
   services.tailscale.enable = true;
