@@ -74,6 +74,34 @@ Rectangle {
                   repeat: true
                   onTriggered: volProc.running = true
                 }
+
+                // Luminosité
+                Text {
+                  id: texte_brightness
+                    text: "󰃠 ...%" 
+                    color: "#ffffff"
+                    font.family: "JetBrainsMono Nerd Font"
+                    font.pixelSize: 14
+                  }
+
+                Process {
+                  id: brightProc
+                  // wpctl est l'outil natif de PipeWire. On multiplie par 100 pour avoir un pourcentage propre.
+                  command: ["sh", "-c", "../scripts/get_brightness.sh"]
+                  stdout: StdioCollector {
+                    onStreamFinished: {
+                      let out = this.text.trim()
+                      texte_sound.text = "󰃠  " + out + "%"
+                    }
+                  }
+                }
+
+                Timer {
+                  interval: 100 // Vérifie très souvent (demi-seconde) pour que le son soit réactif
+                  running: true
+                  repeat: true
+                  onTriggered: brightProc.running = true
+                }
                 
                 // Batterie
                 Text {
@@ -111,6 +139,7 @@ Process {
     Component.onCompleted: {
         wifiProc.running = true
         volProc.running = true
+        brightProc.running = true
         batProc.running = true
     }
 }
