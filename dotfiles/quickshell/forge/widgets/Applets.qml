@@ -91,7 +91,7 @@ Rectangle {
                   stdout: StdioCollector {
                     onStreamFinished: {
                       let out = this.text.trim()
-                      texte_sound.text = "󰃠  " + out + "%"
+                      texte_brightness.text = "󰃠  " + out + "%"
                     }
                   }
                 }
