@@ -86,8 +86,7 @@ Rectangle {
 
                 Process {
                   id: brightProc
-                  // wpctl est l'outil natif de PipeWire. On multiplie par 100 pour avoir un pourcentage propre.
-                  command: ["sh", "-c", "../scripts/get_brightness.sh"]
+                  command: ["sh", "-c", "/home/xerad/.config/quickshell/forge/scripts/get_brightness.sh"]
                   stdout: StdioCollector {
                     onStreamFinished: {
                       let out = this.text.trim()
