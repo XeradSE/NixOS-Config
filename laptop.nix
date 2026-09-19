@@ -27,7 +27,6 @@ services.tlp = {
 };
 
   environment.systemPackages = with pkgs; [
-    brightnessctl  # Luminosité
   ];
 
 }
