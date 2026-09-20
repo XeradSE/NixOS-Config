@@ -431,4 +431,6 @@ services.sunshine = {
     capSysAdmin = true; # C'est LA ligne magique qui autorise la capture KMS silencieuse
     openFirewall = true; # Ouvre automatiquement les ports pour Moonlight
   };
+
+  programs.ssh.startAgent = true;
 }
