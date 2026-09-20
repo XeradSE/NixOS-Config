@@ -26,7 +26,7 @@ PanelWindow {
 
     Rectangle {
       anchors.fill: parent
-      color: Qt.rgba(0, 0, 0, 0.33)
+      color: Qt.rgba(0, 0, 0, 0.5)
     }
 
     // =====================================
