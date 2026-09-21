@@ -47,6 +47,34 @@ Rectangle {
                   onTriggered: wifiProc.running = true
                 }
 
+                // Bluetooth
+                Text {
+                  id: texte_blue
+                    text: " ..." 
+                    color: "#ffffff"
+                    font.family: "JetBrainsMono Nerd Font"
+                    font.pixelSize: 14
+                }
+    
+                Process {
+                  id: blueProc
+                  // Commande pour récupérer le nom du réseau WiFi actif sous KDE
+                  command: ["sh", "-c", "/home/xerad/.config/quickshell/forge/scripts/get_brightness.sh"]
+                  stdout: StdioCollector {
+                    onStreamFinished: {
+                      let out = this.text.trim()
+                      texte_blue.text = out === " " + out
+                    }
+                  }
+                }
+    
+                Timer {
+                  interval: 1000 // Vérifie toutes les 5 secondes
+                  running: true
+                  repeat: true
+                  onTriggered: blueProc.running = true
+                }
+
                 // Volume
                 Text {
                   id: texte_sound
@@ -137,6 +165,7 @@ Process {
     // Cette fonction native s'exécute une seule fois au chargement du module
     Component.onCompleted: {
         wifiProc.running = true
+        blueProc.running = true
         volProc.running = true
         brightProc.running = true
         batProc.running = true
