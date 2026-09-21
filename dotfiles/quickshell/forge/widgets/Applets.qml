@@ -59,11 +59,11 @@ Rectangle {
                 Process {
                   id: blueProc
                   // Commande pour récupérer le nom du réseau WiFi actif sous KDE
-                  command: ["sh", "-c", "/home/xerad/.config/quickshell/forge/scripts/get_brightness.sh"]
+                  command: ["sh", "-c", "/home/xerad/.config/quickshell/forge/scripts/get_bluetooth.sh"]
                   stdout: StdioCollector {
                     onStreamFinished: {
                       let out = this.text.trim()
-                      texte_blue.text = out === " " + out
+                      texte_blue.text = " " + out
                     }
                   }
                 }
