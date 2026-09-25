@@ -245,6 +245,7 @@ in
     zzz
     polkit_gnome
     brightnessctl
+    arch
 
     # ----------------------------------------
     # Environnement Hyprland (Modules)
