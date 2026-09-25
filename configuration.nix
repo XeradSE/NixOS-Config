@@ -265,6 +265,7 @@ in
     glab
     python313
     clang
+    clang-tools
     cmake
     luajit
 
