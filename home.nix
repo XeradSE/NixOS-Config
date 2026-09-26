@@ -117,6 +117,7 @@
     enable = true;
     extraPackages = with pkgs; [
       imagemagick
+      ghostscript
     ];
     extraLuaPackages = luaPkgs: with luaPkgs; [
       magick
