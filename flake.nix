@@ -67,7 +67,7 @@
               ];
               environment.systemPackages = [
                 pkgs.affinity-v3
-                inputs.wlctl.packages.${pkgs.system}.default
+                inputs.wlctl.packages.${pkgs.nixpkgs.hostPlatform.system}.default
               ];
             })
           ];
@@ -98,7 +98,7 @@
               ];
               environment.systemPackages = [
                 pkgs.affinity-v3
-                inputs.wlctl.packages.${pkgs.system}.default
+                inputs.wlctl.packages.${pkgs.nixpkgs.hostPlatform.system}.default
               ];
             })
           ];
