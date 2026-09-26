@@ -18,11 +18,10 @@
     # Le module magique pour gérer Flatpak
     nix-flatpak.url = "github:gmodena/nix-flatpak";
     wlctl.url = "github:aashish-thapa/wlctl";
-    lazygit.url = "github:jesseduffield/lazygit";
   };
 
   # Ce que ton Flake va générer en sortie
-  outputs = { self, nixpkgs, affinity-nix, nix-flatpak, wlctl, lazygit, ... }@inputs: {
+  outputs = { self, nixpkgs, affinity-nix, nix-flatpak, wlctl, ... }@inputs: {
     
     # La configuration des machines
     nixosConfigurations = {
@@ -57,7 +56,6 @@
           ({ pkgs, inputs, ... }: {
               nixpkgs.overlays = [ 
                 affinity-nix.overlays.default
-                lazygit.overlays.default 
               ];
               environment.systemPackages = [ 
                 pkgs.affinity-v3
@@ -89,7 +87,6 @@
           ({ pkgs, inputs, ... }: {
               nixpkgs.overlays = [ 
                 affinity-nix.overlays.default
-                lazygit.overlays.default 
               ];
               environment.systemPackages = [ 
                 pkgs.affinity-v3
