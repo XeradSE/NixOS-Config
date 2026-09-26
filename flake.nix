@@ -1,4 +1,3 @@
-
 {
   description = "Configuration NixOS minimale avec Flakes";
 
@@ -21,80 +20,89 @@
   };
 
   # Ce que ton Flake va générer en sortie
-  outputs = { self, nixpkgs, affinity-nix, nix-flatpak, wlctl, ... }@inputs: {
-    
-    # La configuration des machines
-    nixosConfigurations = {
-      
-      # Remplace "laptop" par le nom exact de ta machine (networking.hostName)
-      laptop = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
+  outputs =
+    {
+      self,
+      nixpkgs,
+      affinity-nix,
+      nix-flatpak,
+      wlctl,
+      ...
+    }@inputs:
+    {
 
-	# + On rend les inputs disponibles dans les autres fichiers
-        specialArgs = { inherit inputs; };
-        
-        # On inclut tes fichiers de configuration actuels
-        modules = [
-          ./hardware-laptop.nix
-          ./configuration.nix
-          ./laptop.nix
-          # On charge le module ici
-          nix-flatpak.nixosModules.nix-flatpak
+      # La configuration des machines
+      nixosConfigurations = {
 
-	  # + On active le module Home Manager
-          inputs.home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-	          home-manager.backupFileExtension = "backup";
-            
-            # + On dit à Home Manager de lire la config de ton utilisateur
-            # Remplace "kbetuel" par ton vrai nom d'utilisateur système
-            home-manager.users.xerad = import ./home.nix;
-          }
+        # Remplace "laptop" par le nom exact de ta machine (networking.hostName)
+        laptop = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
 
-          ({ pkgs, inputs, ... }: {
-              nixpkgs.overlays = [ 
+          # + On rend les inputs disponibles dans les autres fichiers
+          specialArgs = { inherit inputs; };
+
+          # On inclut tes fichiers de configuration actuels
+          modules = [
+            ./hardware-laptop.nix
+            ./configuration.nix
+            ./laptop.nix
+            # On charge le module ici
+            nix-flatpak.nixosModules.nix-flatpak
+
+            # + On active le module Home Manager
+            inputs.home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.backupFileExtension = "backup";
+
+              # + On dit à Home Manager de lire la config de ton utilisateur
+              # Remplace "kbetuel" par ton vrai nom d'utilisateur système
+              home-manager.users.xerad = import ./home.nix;
+            }
+
+            ({ pkgs, inputs, ... }: {
+              nixpkgs.overlays = [
                 affinity-nix.overlays.default
               ];
-              environment.systemPackages = [ 
+              environment.systemPackages = [
                 pkgs.affinity-v3
                 inputs.wlctl.packages.${pkgs.system}.default
               ];
             })
-        ];
+          ];
+        };
+
+        # 🖥️ Ton PC fixe (Tour)
+        desktop = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = { inherit inputs; };
+          modules = [
+            ./hardware-desktop.nix # Le hardware scanné sur la tour
+            ./configuration.nix # Le MÊME socle commun
+            ./desktop.nix # 🔥 Le fichier contenant tes règles uniques au fixe
+            # On charge le module ici
+            nix-flatpak.nixosModules.nix-flatpak
+
+            inputs.home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.backupFileExtension = "backup";
+              home-manager.users.xerad = import ./home.nix;
+            }
+
+            ({ pkgs, inputs, ... }: {
+              nixpkgs.overlays = [
+                affinity-nix.overlays.default
+              ];
+              environment.systemPackages = [
+                pkgs.affinity-v3
+                inputs.wlctl.packages.${pkgs.system}.default
+              ];
+            })
+          ];
+        };
       };
-
-      # 🖥️ Ton PC fixe (Tour)
-  desktop = nixpkgs.lib.nixosSystem {
-    system = "x86_64-linux";
-    specialArgs = { inherit inputs; };
-    modules = [
-      ./hardware-desktop.nix # Le hardware scanné sur la tour
-      ./configuration.nix    # Le MÊME socle commun
-      ./desktop.nix          # 🔥 Le fichier contenant tes règles uniques au fixe
-      # On charge le module ici
-      nix-flatpak.nixosModules.nix-flatpak
-      
-      inputs.home-manager.nixosModules.home-manager
-      {
-        home-manager.useGlobalPkgs = true;
-        home-manager.useUserPackages = true;
-	      home-manager.backupFileExtension = "backup";
-        home-manager.users.xerad = import ./home.nix;
-      }
-
-          ({ pkgs, inputs, ... }: {
-              nixpkgs.overlays = [ 
-                affinity-nix.overlays.default
-              ];
-              environment.systemPackages = [ 
-                pkgs.affinity-v3
-                inputs.wlctl.packages.${pkgs.system}.default
-              ];
-            })
-    ];
-  };
     };
-  };
 }

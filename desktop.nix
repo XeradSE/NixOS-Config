@@ -32,7 +32,7 @@
     open = false; # Utilise les pilotes propriétaires fermés
     nvidiaSettings = true;
     # "production" est plus stable, "beta" est parfois nécessaire pour les cartes très récentes
-    package = config.boot.kernelPackages.nvidiaPackages.production; 
+    package = config.boot.kernelPackages.nvidiaPackages.production;
   };
 
 }

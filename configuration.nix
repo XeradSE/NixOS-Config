@@ -2,7 +2,12 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 let
   davinciResolveWrapped = pkgs.symlinkJoin {
@@ -15,17 +20,17 @@ let
   };
 in
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      # ./hardware-configuration.nix -- done by flake
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    # ./hardware-configuration.nix -- done by flake
+  ];
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-# Et dans ton gestionnaire de fenêtres / autostart de Hyprland, lance-le :
-# exec-once = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1"
+  # Et dans ton gestionnaire de fenêtres / autostart de Hyprland, lance-le :
+  # exec-once = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1"
   # Use latest kernel.
   # boot.kernelPackages = pkgs.linuxPackages_latest;
 
@@ -56,8 +61,6 @@ in
   # Enable the X11 windowing system.
   # services.xserver.enable = true;
 
-  
-
   # Configure keymap in X11
   services.xserver.xkb.layout = "fr";
   # services.xserver.xkb.options = "eurosign:e,caps:escape";
@@ -73,20 +76,26 @@ in
   #   pulse.enable = true;
   # };
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-   users.users.xerad = {
-     isNormalUser = true;
-     extraGroups = [ "wheel" "vboxusers" ]; # Enable ‘sudo’ for the user.
-     packages = with pkgs; [
-       tree
-     ];
-     shell = pkgs.zsh;
-    };
+  users.users.xerad = {
+    isNormalUser = true;
+    extraGroups = [
+      "wheel"
+      "vboxusers"
+    ]; # Enable ‘sudo’ for the user.
+    packages = with pkgs; [
+      tree
+    ];
+    shell = pkgs.zsh;
+  };
 
   # programs.firefox.enable = true;
 
@@ -142,13 +151,13 @@ in
 
   nixpkgs.config.allowUnfree = true;
 
-# ==========================================
+  # ==========================================
   # 1. SERVICES ET MODULES (Remplace les paquets isolés)
   # ==========================================
 
   # Environnement de bureau et Portails
   programs.hyprland.enable = true;
-  
+
   # Gaming (Steam installe automatiquement les lib32, Proton, et Gamescope)
   #nixpkgs.overlays = [ inputs.millennium.overlays.default ];
   programs.steam = {
@@ -179,7 +188,10 @@ in
   # Impression
   services.printing = {
     enable = true;
-    drivers = with pkgs; [ hplip brlaser ]; # brlaser couvre les modèles Brother HL
+    drivers = with pkgs; [
+      hplip
+      brlaser
+    ]; # brlaser couvre les modèles Brother HL
   };
 
   # Audio (Pipewire remplace PulseAudio et ALSA)
@@ -194,29 +206,30 @@ in
   # Divers
   services.flatpak = {
     enable = true;
-  
-  # On s'assure que le dépôt officiel Flathub est bien présent
-  remotes = [{
-    name = "flathub";
-    location = "https://dl.flathub.org/repo/flathub.flatpakrepo";
-  }];
-  
-  # Ta liste d'applications déclaratives (utilise l'ID complet)
-  packages = [
-    "com.github.tchx84.Flatseal"
-    "org.jdownloader.JDownloader"
-    "dev.aunetx.deezer"
-  ];
-  
-  # Bonus : mettre à jour les Flatpaks automatiquement en tâche de fond
-  update.auto = {
-    enable = true;
-    onCalendar = "weekly";
-  };
+
+    # On s'assure que le dépôt officiel Flathub est bien présent
+    remotes = [
+      {
+        name = "flathub";
+        location = "https://dl.flathub.org/repo/flathub.flatpakrepo";
+      }
+    ];
+
+    # Ta liste d'applications déclaratives (utilise l'ID complet)
+    packages = [
+      "com.github.tchx84.Flatseal"
+      "org.jdownloader.JDownloader"
+      "dev.aunetx.deezer"
+    ];
+
+    # Bonus : mettre à jour les Flatpaks automatiquement en tâche de fond
+    update.auto = {
+      enable = true;
+      onCalendar = "weekly";
+    };
   };
   services.gvfs.enable = true; # Pour la corbeille et le montage USB
   # no longer needed - programs.adb.enable = true;  # Remplace android-udev
-
 
   # ==========================================
   # 2. POLICES D'ÉCRITURE
@@ -228,16 +241,30 @@ in
     nerd-fonts.caskaydia-cove
   ];
 
-
   # ==========================================
   # 3. PAQUETS SYSTÈME GLOBAUX
   # ==========================================
   environment.systemPackages = with pkgs; [
     # ----------------------------------------
     # Terminal & Utilitaires CLI
-    wget fd fzf ripgrep jq zoxide btop fastfetch
-    p7zip unrar eza # eza remplace avantageusement ls
-    wl-clipboard xdotool ydotool yad kitty yazi nano
+    wget
+    fd
+    fzf
+    ripgrep
+    jq
+    zoxide
+    btop
+    fastfetch
+    p7zip
+    unrar
+    eza # eza remplace avantageusement ls
+    wl-clipboard
+    xdotool
+    ydotool
+    yad
+    kitty
+    yazi
+    nano
     bluetuith
     playerctl
     rclone
@@ -248,9 +275,11 @@ in
 
     # ----------------------------------------
     # Environnement Hyprland (Modules)
-    mako           # Notifications
-    wofi           # Lanceur d'applications
-    grim slurp swappy # Capture d'écran (remplace xorg-tools)
+    mako # Notifications
+    wofi # Lanceur d'applications
+    grim
+    slurp
+    swappy # Capture d'écran (remplace xorg-tools)
     quickshell
     oh-my-zsh
     pwvucontrol
@@ -307,7 +336,7 @@ in
     discord
     telegram-desktop
     whatsie
-    
+
     # ----------------------------------------
     # Multimédia
     vlc
@@ -318,11 +347,11 @@ in
   ];
 
   hardware.graphics = {
-  	enable = true;
+    enable = true;
     enable32Bit = true;
-	extraPackages = with pkgs; [
-		intel-media-driver	
-	];
+    extraPackages = with pkgs; [
+      intel-media-driver
+    ];
   };
 
   environment.variables = {
@@ -330,75 +359,91 @@ in
     TERMINAL = "kitty";
   };
 
-programs.direnv = {
-  enable = true;
-  nix-direnv.enable = true;
-};
+  programs.direnv = {
+    enable = true;
+    nix-direnv.enable = true;
+  };
 
-systemd.user.services.awww-slideshow = {
-  description = "Awww Wallpaper Daemon and Slideshow";
-  
-  # Le service démarre en même temps que l'environnement graphique
-  partOf = [ "graphical-session.target" ];
-  after = [ "graphical-session.target" ];
-  wantedBy = [ "graphical-session.target" ];
+  systemd.user.services.awww-slideshow = {
+    description = "Awww Wallpaper Daemon and Slideshow";
 
-  # Déclare explicitement les paquets dont le script a besoin pour fonctionner
-  path = with pkgs; [ 
-    awww 
-    coreutils # Pour shuf et sleep
-    findutils # Pour find
-  ];
+    # Le service démarre en même temps que l'environnement graphique
+    partOf = [ "graphical-session.target" ];
+    after = [ "graphical-session.target" ];
+    wantedBy = [ "graphical-session.target" ];
 
-  # Ton script bash parfaitement intégré
-  script = ''
-    #!/usr/bin/env bash
+    # Déclare explicitement les paquets dont le script a besoin pour fonctionner
+    path = with pkgs; [
+      awww
+      coreutils # Pour shuf et sleep
+      findutils # Pour find
+    ];
 
-    DOSSIER="$HOME/Pictures/Wallpapers/"
-    TEMPS="5m"
+    # Ton script bash parfaitement intégré
+    script = ''
+      #!/usr/bin/env bash
 
-    if [ ! -d "$DOSSIER" ]; then
-      echo "Erreur : Le dossier $DOSSIER n'existe pas."
-      exit 1
-    fi
+      DOSSIER="$HOME/Pictures/Wallpapers/"
+      TEMPS="5m"
 
-    # Lance le démon awww en fond
-    awww-daemon &
-    
-    # Attend que le démon soit prêt
-    while ! awww query >/dev/null 2>&1; do
-      sleep 0.1
-    done
-
-    # Boucle du diaporama
-    while true; do
-      FICHIER=$(find -L "$DOSSIER" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.webp" \) | shuf -n 1)
-
-      if [ -n "$FICHIER" ]; then
-        awww img "$FICHIER" --transition-type wipe --transition-angle 30 --transition-fps 60 >/dev/null 2>&1
+      if [ ! -d "$DOSSIER" ]; then
+        echo "Erreur : Le dossier $DOSSIER n'existe pas."
+        exit 1
       fi
 
-      sleep "$TEMPS"
-    done
-  '';
+      # Lance le démon awww en fond
+      awww-daemon &
 
-  serviceConfig = {
-    Type = "simple";
-    # Relance automatiquement le script en cas de crash
-    Restart = "on-failure";
-    RestartSec = "5s";
+      # Attend que le démon soit prêt
+      while ! awww query >/dev/null 2>&1; do
+        sleep 0.1
+      done
+
+      # Boucle du diaporama
+      while true; do
+        FICHIER=$(find -L "$DOSSIER" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.webp" \) | shuf -n 1)
+
+        if [ -n "$FICHIER" ]; then
+          awww img "$FICHIER" --transition-type wipe --transition-angle 30 --transition-fps 60 >/dev/null 2>&1
+        fi
+
+        sleep "$TEMPS"
+      done
+    '';
+
+    serviceConfig = {
+      Type = "simple";
+      # Relance automatiquement le script en cas de crash
+      Restart = "on-failure";
+      RestartSec = "5s";
+    };
   };
-};
 
   # Activation du chargeur dynamique pour les binaires non-Nix
   # Pour utiliser Android Studio correctement (l'émulation)
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [
-    zlib zstd stdenv.cc.cc curl openssl attr libssh bzip2 libxml2
-    acl libsodium util-linux xz systemd icu
+    zlib
+    zstd
+    stdenv.cc.cc
+    curl
+    openssl
+    attr
+    libssh
+    bzip2
+    libxml2
+    acl
+    libsodium
+    util-linux
+    xz
+    systemd
+    icu
     nss
     nspr
-    libpulseaudio dbus expat libuuid
+    libpulseaudio
+    dbus
+    expat
+    libuuid
     # Bibliothèques graphiques et audio souvent requises par l'émulateur Android
     alsa-lib
     libGL
@@ -410,11 +455,23 @@ systemd.user.services.awww-slideshow = {
     libXi
     libXrender
     libXtst
-    libglvnd libdrm mesa vulkan-loader
-    libxcb libxkbcommon libXcomposite
-    libXdamage libXext
-    libXrandr libSM libICE
-    glib gtk2 pango cairo gdk-pixbuf
+    libglvnd
+    libdrm
+    mesa
+    vulkan-loader
+    libxcb
+    libxkbcommon
+    libXcomposite
+    libXdamage
+    libXext
+    libXrandr
+    libSM
+    libICE
+    glib
+    gtk2
+    pango
+    cairo
+    gdk-pixbuf
     libpng
     libxkbfile
     libbsd
@@ -425,7 +482,7 @@ systemd.user.services.awww-slideshow = {
     libxshmfence
   ];
 
-services.sunshine = {
+  services.sunshine = {
     enable = true;
     autoStart = false; # On laisse ton hyprland.lua s'en charger pour le moment
     capSysAdmin = true; # C'est LA ligne magique qui autorise la capture KMS silencieuse
