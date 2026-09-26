@@ -35,6 +35,12 @@ require("lazy").setup({
     { "3rd/image.nvim" },
 
     { import = "plugins" },
+
+    {
+      "vhyrro/luarocks.nvim",
+      priority = 10000, -- Very high priority is required, luarocks.nvim should run as the first plugin in your config.
+      config = true,
+    },
   },
   defaults = {
     -- By default, only LazyVim plugins will be lazy-loaded. Your custom plugins will load during startup.
