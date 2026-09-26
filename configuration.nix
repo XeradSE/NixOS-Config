@@ -259,7 +259,6 @@ in
     # ----------------------------------------
     # Développement & Outils
     neovim
-    vscodium
     git
     gh
     glab
@@ -306,6 +305,7 @@ in
     obs-studio
     numworks-epsilon
     libreoffice
+    zathura
     discord
     telegram-desktop
     whatsie
