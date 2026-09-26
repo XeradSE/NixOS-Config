@@ -32,8 +32,6 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.lang.git" },
     { import = "lazyvim.plugins.extras.lang.typescript" },
 
-    { "3rd/image.nvim" },
-
     { import = "plugins" },
   },
   rocks = { -- car chiant sur nix, privilégier la config de home-manager pour les trucs qui aurais besoin de luarocks

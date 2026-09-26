@@ -118,6 +118,7 @@
     extraPackages = with pkgs; [
       imagemagick
       ghostscript
+      markdownlint-cli2
     ];
     extraLuaPackages = luaPkgs: with luaPkgs; [
       magick
