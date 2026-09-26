@@ -124,7 +124,7 @@
       cmake-language-server
       nixd # LSP
       nixfmt-rfc-style # Formatteur -> Youpi !
-      nodePackages.vscode-langservers-extracted # Un gros paquet générique fourni par Microsoft qui inclut le LSP pour JSON, mais aussi HTML, CSS et ESLint
+      vscode-langservers-extracted # Un gros paquet générique fourni par Microsoft qui inclut le LSP pour JSON, mais aussi HTML, CSS et ESLint
       marksman # LSP
       pyright # LSP
       ruff # Formatteur python
