@@ -55,7 +55,10 @@
           }
 
           ({ pkgs, inputs, ... }: {
-              nixpkgs.overlays = [ affinity-nix.overlays.default, lazygit.overlays.default ];
+              nixpkgs.overlays = [ 
+                affinity-nix.overlays.default
+                lazygit.overlays.default 
+              ];
               environment.systemPackages = [ 
                 pkgs.affinity-v3
                 inputs.wlctl.packages.${pkgs.system}.default
@@ -84,7 +87,10 @@
       }
 
           ({ pkgs, inputs, ... }: {
-              nixpkgs.overlays = [ affinity-nix.overlays.default, lazygit.overlays.default ];
+              nixpkgs.overlays = [ 
+                affinity-nix.overlays.default
+                lazygit.overlays.default 
+              ];
               environment.systemPackages = [ 
                 pkgs.affinity-v3
                 inputs.wlctl.packages.${pkgs.system}.default
