@@ -112,4 +112,14 @@
       };
     };
   };
+
+  programs.neovim = {
+    enable = true;
+    extraPackages = with pkgs; [
+      imagemagick
+    ];
+    extraLuaPackages = luaPkgs: with luaPkgs; [
+      magick
+    ];
+  };
 }

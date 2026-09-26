@@ -258,6 +258,7 @@ in
 
     # ----------------------------------------
     # Développement & Outils
+    neovim
     git
     gh
     glab
@@ -318,16 +319,6 @@ in
     pear-desktop # youtube-music
     ruffle
   ];
-
-  programs.neovim = {
-    enable = true;
-    extraPackages = with pkgs; [
-      imagemagick
-    ];
-    extraLuaPackages = luaPkgs: with luaPkgs; [
-      magick
-    ];
-  };
 
   hardware.graphics = {
   	enable = true;
