@@ -32,7 +32,7 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.lang.git" },
     { import = "lazyvim.plugins.extras.lang.typescript" },
 
-    { "3rd/image.nvim" },
+    -- { "3rd/image.nvim" },
 
     { import = "plugins" },
 
