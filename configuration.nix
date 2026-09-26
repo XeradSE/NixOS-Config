@@ -267,6 +267,7 @@ in
     clang
     clang-tools
     cmake
+    make
     luajit
 
     # ----------------------------------------
