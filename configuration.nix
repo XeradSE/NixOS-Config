@@ -263,12 +263,9 @@ in
     gh
     glab
     python313
-    gcc
     clang
-    clang-tools
     cmake
     gnumake
-    luajit
 
     # ----------------------------------------
     # Gaming (Steam)

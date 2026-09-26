@@ -118,7 +118,17 @@
     extraPackages = with pkgs; [
       imagemagick
       ghostscript
-      markdownlint-cli2
+      markdownlint-cli2 # Linter
+      clang-tools
+      luajit
+      cmake-language-server
+      nixd # LSP
+      nixfmt-rfc-style # Formatteur -> Youpi !
+      nodePackages.vscode-langservers-extracted # Un gros paquet générique fourni par Microsoft qui inclut le LSP pour JSON, mais aussi HTML, CSS et ESLint
+      marksman # LSP
+      pyright # LSP
+      ruff # Formatteur python
+      vtsls # LSP Type/JavaScript
     ];
     extraLuaPackages = luaPkgs: with luaPkgs; [
       magick
