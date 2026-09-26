@@ -122,6 +122,7 @@
       cmake-language-server
       nixd # LSP
       nixfmt # Formatteur -> Youpi !
+      statix # linter -> Un analyseur de code spécifique au langage Nix. Son rôle est de lire tes fichiers .nix et de te signaler si tu utilises des "anti-patterns" (des mauvaises pratiques) pour te suggérer une syntaxe plus propre et plus moderne.
       vscode-langservers-extracted # Un gros paquet générique fourni par Microsoft qui inclut le LSP pour JSON, mais aussi HTML, CSS et ESLint
       marksman # LSP
       pyright # LSP
