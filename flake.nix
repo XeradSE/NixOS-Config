@@ -36,13 +36,13 @@
 
         # Remplace "laptop" par le nom exact de ta machine (networking.hostName)
         laptop = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+
           # + On rend les inputs disponibles dans les autres fichiers
           specialArgs = { inherit inputs; };
 
           # On inclut tes fichiers de configuration actuels
           modules = [
-            # L'architecture se déclare ici maintenant :
-            { nixpkgs.hostPlatform = "x86_64-linux"; }
             ./hardware-laptop.nix
             ./configuration.nix
             ./laptop.nix
@@ -67,7 +67,7 @@
               ];
               environment.systemPackages = [
                 pkgs.affinity-v3
-                inputs.wlctl.packages.${pkgs.nixpkgs.hostPlatform}.default
+                inputs.wlctl.packages.${pkgs.stdenv.hostPlatform.system}.default
               ];
             })
           ];
@@ -75,9 +75,9 @@
 
         # 🖥️ Ton PC fixe (Tour)
         desktop = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
           specialArgs = { inherit inputs; };
           modules = [
-            { nixpkgs.hostPlatform = "x86_64-linux"; }
             ./hardware-desktop.nix # Le hardware scanné sur la tour
             ./configuration.nix # Le MÊME socle commun
             ./desktop.nix # 🔥 Le fichier contenant tes règles uniques au fixe
@@ -98,7 +98,7 @@
               ];
               environment.systemPackages = [
                 pkgs.affinity-v3
-                inputs.wlctl.packages.${pkgs.nixpkgs.hostPlatform}.default
+                inputs.wlctl.packages.${pkgs.stdenv.hostPlatform.system}.default
               ];
             })
           ];
