@@ -46,10 +46,8 @@
     syntaxHighlighting.enable = true;
     
   shellAliases = {
-      ll = "ls -lA";
       # $(hostname) récupère automatiquement le nom de la machine en cours
       update = "sudo nixos-rebuild boot --flake ~/nixos-config#$(hostname)";
-      cd = "z"; 
     };
 
     # On garde juste l'auto-démarrage pour ton fixe
