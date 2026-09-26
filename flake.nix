@@ -22,7 +22,7 @@
   };
 
   # Ce que ton Flake va générer en sortie
-  outputs = { self, nixpkgs, affinity-nix, nix-flatpak, wlctl, ... }@inputs: {
+  outputs = { self, nixpkgs, affinity-nix, nix-flatpak, wlctl, lazygit, ... }@inputs: {
     
     # La configuration des machines
     nixosConfigurations = {
