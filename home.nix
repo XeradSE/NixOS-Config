@@ -134,4 +134,13 @@
         magick
       ];
   };
+
+  xdg.mimeApps = {
+    enable = true;
+
+    # Définir les applications par défaut
+    defaultApplications = {
+      "application/pdf" = "zathura.desktop";
+    };
+  };
 }
