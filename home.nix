@@ -30,6 +30,7 @@
   home.packages = with pkgs; [
     # htop
     # ripgrep
+    xdg-utils
   ];
 
   # Ne change pas cette version, elle indique avec quelle version de HM tu as commencé
@@ -135,12 +136,15 @@
       ];
   };
 
-  xdg.mimeApps = {
+  xdg = {
     enable = true;
+    mimeApps = {
+      enable = true;
 
-    # Définir les applications par défaut
-    defaultApplications = {
-      "application/pdf" = "zathura.desktop";
+      # Définir les applications par défaut
+      defaultApplications = {
+        "application/pdf" = [ "zathura.desktop" ];
+      };
     };
   };
 }
