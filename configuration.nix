@@ -331,7 +331,6 @@ in
     davinciResolveWrapped
     obs-studio
     numworks-epsilon
-    libreoffice
     zathura
     discord
     telegram-desktop
