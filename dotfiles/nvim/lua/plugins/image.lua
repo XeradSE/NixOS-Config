@@ -10,9 +10,6 @@ return {
           clear_in_insert_mode = false,
           download_remote_images = true,
           only_render_image_at_cursor = false,
-          file_handler = function(document_path, image_path, fallback)
-            image_path = image_path:gsub('^["\']',''):gsub('["\']$', '')
-            return fallback(document_path, image_path)
         },
       },
       max_width = nil,
