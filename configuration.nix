@@ -295,6 +295,7 @@ in
     clang
     cmake
     gnumake
+    protege
 
     # ----------------------------------------
     # Gaming (Steam)
