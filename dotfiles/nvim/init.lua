@@ -18,11 +18,13 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-	{
-      		"direnv/direnv.vim",
-      		lazy = false,
-    	},
-        { import = "plugins" },
+	spec = {
+		{
+      			"direnv/direnv.vim",
+      			lazy = false,
+    		},
+        	{ import = "plugins" },
+	},
   	rocks = { -- car chiant sur nix, privilégier la config de home-manager pour les trucs qui aurais besoin de luarocks
     	enabled = false,
 	},
