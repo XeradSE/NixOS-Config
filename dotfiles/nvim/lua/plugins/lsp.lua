@@ -7,7 +7,13 @@ return {
     lspconfig.clangd.setup({})
 
     -- 2. Nix (nixd)
-    lspconfig.nixd.setup({})
+    lspconfig.nixd.setup({
+	settings = {
+		nixd = {
+			formatting = { command = {"nixfmt"} },
+		},
+	},
+    })
 
     -- 3. Markdown (marksman)
     lspconfig.marksman.setup({})
@@ -31,5 +37,14 @@ return {
     vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { desc = "Aller à la définition" })
     vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, { desc = "Actions de code (Fix)" })
     vim.keymap.set('n', 'gl', vim.diagnostic.open_float, { desc = "Afficher l'erreur" })
+
+    -- Formatage automatique à la sauvegarde via le LSP
+    vim.api.nvim_create_autocmd("BufWritePre", {
+	desc = "Demande au LSP de formater avant de sauvegarder",
+	pattern = "*",
+	callback = function(args)
+	vim.lsp.buf.format({ bufnr = args.buf })
+	end,
+    })
   end,
 }

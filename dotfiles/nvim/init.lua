@@ -1,6 +1,11 @@
 -- touche "espace" en tant que <leader>
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
+-- Comportement des tabulations
+vim.opt.tabstop = 4       -- Une tabulation équivaut à 4 espaces visuellement
+vim.opt.shiftwidth = 4    -- L'indentation automatique (avec > ou <) utilise 4 espaces
+vim.opt.expandtab = true  -- Transforme l'appui sur "Tab" en vrais espaces
+vim.opt.softtabstop = 4   -- Fait en sorte que la touche "Retour arrière" efface 4 espaces d'un coup
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 
