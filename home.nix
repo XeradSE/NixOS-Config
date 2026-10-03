@@ -11,7 +11,7 @@
     ".config/nvim" = {
     	source = ./dotfiles/nvim;
 	recursive = true;
-    }
+    };
 
     # Exemple pour Hyprland :
     ".config/hypr".source = ./dotfiles/hypr;
