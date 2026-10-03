@@ -18,8 +18,9 @@ return {
     -- 3. Markdown (marksman)
     lspconfig.marksman.setup({})
 
-    -- 4. Python (pyright)
+    -- 4. Python (pyright (lsp) + ruff (formatage))
     lspconfig.pyright.setup({})
+    lspconfig.ruff.setup({})
 
     -- 5. TypeScript/JavaScript (vtsls)
     -- Lspconfig l'appelle souvent tsserver ou vtsls selon la configuration
