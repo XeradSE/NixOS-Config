@@ -23,8 +23,7 @@ require("lazy").setup({
       		lazy = false,
     	},
         { import = "plugins" },
-  	},
-  		rocks = { -- car chiant sur nix, privilégier la config de home-manager pour les trucs qui aurais besoin de luarocks
-    		enabled = false,
-  	},
+  	rocks = { -- car chiant sur nix, privilégier la config de home-manager pour les trucs qui aurais besoin de luarocks
+    	enabled = false,
+	},
 })
