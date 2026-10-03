@@ -3,7 +3,7 @@ return {
 	    	"nvim-treesitter/nvim-treesitter",
 	    	build = ":TSUpdate", -- Met à jour les parseurs automatiquement
 	    	config = function()
-			require("nvim-treesitter.configs").setup({
+			opts = {
 				-- Ajoute les langages que tu veux colorer ici
 				ensure_installed = { "c", "cpp", "lua", "vim", "vimdoc", "query", "nix", "markdown" },
 			
