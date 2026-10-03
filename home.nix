@@ -8,7 +8,10 @@
   # C'est ici la magie ! On lie tes dossiers locaux vers ~/.config
   home.file = {
     # Exemple pour Neovim :
-    ".config/nvim".source = ./dotfiles/nvim;
+    ".config/nvim" = {
+    	source = ./dotfiles/nvim;
+	recursive = true;
+    }
 
     # Exemple pour Hyprland :
     ".config/hypr".source = ./dotfiles/hypr;
