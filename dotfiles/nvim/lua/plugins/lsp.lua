@@ -19,6 +19,13 @@ return {
     -- Lspconfig l'appelle souvent tsserver ou vtsls selon la configuration
     lspconfig.vtsls.setup({})
 
+    -- 6. JSON - HTML - CSS - ESLint (vscode-langservers-extracted)
+    -- un seul paquet mais 4 lsps différents à l'intérieur
+    lspconfig.jsonls.setup({}) -- Pour JSON
+    lspconfig.html.setup({})   -- Pour HTML
+    lspconfig.cssls.setup({})  -- Pour CSS
+    lspconfig.eslint.setup({}) -- Pour ESLint
+
     -- Raccourcis clavier de base quand tu es sur une erreur ou un mot-clé
     vim.keymap.set('n', 'K', vim.lsp.buf.hover, { desc = "Afficher infos (Hover)" })
     vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { desc = "Aller à la définition" })
