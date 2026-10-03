@@ -46,7 +46,6 @@ require("lazy").setup({
 	{
 	    	"nvim-treesitter/nvim-treesitter",
 	    	build = ":TSUpdate", -- Met à jour les parseurs automatiquement
-		main = "nvim-treesitter.configs", -- Indique à Lazy quel fichier require
 	    	config = function()
 			require("nvim-treesitter.configs").setup({
 				-- Ajoute les langages que tu veux colorer ici
