@@ -15,7 +15,7 @@ return {
 					-- Désactive la vieille coloration de base de Vim pour ces langages
 					additional_vim_regex_highlighting = false, 
 				},
-			})
+			}
 	    	end,
 	},
 }
