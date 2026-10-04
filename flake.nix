@@ -17,7 +17,6 @@
     # Le module magique pour gérer Flatpak
     nix-flatpak.url = "github:gmodena/nix-flatpak";
     wlctl.url = "github:aashish-thapa/wlctl";
-    aagl.url = "github:ezKEa/aagl-gtk-on-nix";
   };
 
   # Ce que ton Flake va générer en sortie
@@ -73,11 +72,6 @@
                 inputs.wlctl.packages.${pkgs.stdenv.hostPlatform.system}.default
               ];
             })
-            {
-              imports = [ aagl.nixosModules.default ];
-              nix.settings = aagl.nixConfig; # Set up Cachix
-              programs.anime-game-launcher.enable = true; # Adds launcher and /etc/hosts rules
-            }
           ];
         };
 
@@ -110,11 +104,6 @@
                 inputs.wlctl.packages.${pkgs.stdenv.hostPlatform.system}.default
               ];
             })
-            {
-              imports = [ aagl.nixosModules.default ];
-              nix.settings = aagl.nixConfig; # Set up Cachix
-              programs.anime-game-launcher.enable = true; # Adds launcher and /etc/hosts rules
-            }
           ];
         };
       };
