@@ -9,10 +9,10 @@ return {
     -- dependencies = { "saghen/blink.cmp" },
   }
   -- Vellum
-  --{
-  --  'blackhat-7/vellum.nvim',
-  --  ft = 'markdown',
-  --  keys = { { '<leader>mp', '<cmd>Vellum<cr>', desc = 'Markdown preview' } },
-  --  opts = {},
-  --}
+  {
+    'blackhat-7/vellum.nvim',
+    ft = 'markdown',
+    keys = { { '<leader>mp', '<cmd>Vellum<cr>', desc = 'Markdown preview' } },
+    opts = {},
+  }
 }
