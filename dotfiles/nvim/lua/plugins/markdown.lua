@@ -13,7 +13,7 @@ return {
     'blackhat-7/vellum.nvim',
 
     -- On entre dans le dossier 'render' avant de lancer npm
-    build = "cd render && npm install",
+    build = "cd render && npm install --ignore-scripts=false",
 
     ft = 'markdown',
     keys = { { '<leader>mp', '<cmd>Vellum<cr>', desc = 'Markdown preview' } },
