@@ -7,7 +7,7 @@ return {
 
     -- Completion for `blink.cmp`
     -- dependencies = { "saghen/blink.cmp" },
-  }
+  },
   -- Vellum
   {
     'blackhat-7/vellum.nvim',
