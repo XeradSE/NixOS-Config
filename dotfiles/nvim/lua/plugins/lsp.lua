@@ -1,7 +1,7 @@
 return {
   "neovim/nvim-lspconfig",
   config = function()
-    local lspconfig = vim.lsp.config
+    local lspconfig = require('lspconfig')
 
     -- 1. C++ (clangd)
     lspconfig.clangd.setup({})
