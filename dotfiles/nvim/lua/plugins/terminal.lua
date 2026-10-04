@@ -4,7 +4,7 @@ return {
   config = function()
     require("toggleterm").setup({
       -- On définit Ctrl + \ comme raccourci universel pour ouvrir/fermer
-      open_mapping = [[<leader>t]], 
+      open_mapping = [[<C-t>]], 
       
       direction = "float", -- Peut aussi être "horizontal" ou "vertical"
       
