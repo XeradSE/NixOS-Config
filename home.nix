@@ -9,8 +9,8 @@
   home.file = {
     # Exemple pour Neovim :
     ".config/nvim" = {
-    	source = ./dotfiles/nvim;
-	recursive = true;
+      source = ./dotfiles/nvim;
+      recursive = true;
     };
 
     # Exemple pour Hyprland :
@@ -132,6 +132,7 @@
       pyright # LSP
       ruff # Formatteur python
       vtsls # LSP Type/JavaScript
+      nodejs_26
     ];
     extraLuaPackages =
       luaPkgs: with luaPkgs; [
