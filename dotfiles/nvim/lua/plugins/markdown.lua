@@ -11,6 +11,10 @@ return {
   -- Vellum
   {
     'blackhat-7/vellum.nvim',
+    
+    -- C'EST CETTE LIGNE QUI EST CRUCIALE POUR NODE.JS :
+    build = "npm install",
+    
     ft = 'markdown',
     keys = { { '<leader>mp', '<cmd>Vellum<cr>', desc = 'Markdown preview' } },
     opts = {},
