@@ -27,7 +27,6 @@
       affinity-nix,
       nix-flatpak,
       wlctl,
-      aagl,
       ...
     }@inputs:
     {
