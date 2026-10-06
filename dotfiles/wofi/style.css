@@ -1,62 +1,62 @@
 /* --- ~/.config/wofi/style.css --- */
 
 window {
-    margin: 0px;
-    /* La nouvelle bordure Magenta */
-    border: 2px solid #ffffff; 
-    background-color: rgba(30, 30, 46, 0.5); 
-    border-radius: 5px;
-    font-family: "JetBrainsMono Nerd Font", sans-serif;
-    font-size: 15px;
+  margin: 0px;
+  /* La nouvelle bordure Magenta */
+  border: 2px solid #ffffff;
+  background-color: rgba(30, 30, 46, 0.8);
+  border-radius: 5px;
+  font-family: "JetBrainsMono Nerd Font", sans-serif;
+  font-size: 15px;
 }
 
 #input {
-    margin: 15px;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    color: #dddddd;
-    background-color: rgba(49, 50, 68, 0.5);
-    outline: none;
+  margin: 15px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  color: #dddddd;
+  background-color: rgba(49, 50, 68, 0.8);
+  outline: none;
 }
 
 #inner-box {
-    margin: 5px;
-    border: none;
-    background-color: transparent;
+  margin: 5px;
+  border: none;
+  background-color: transparent;
 }
 
 #outer-box {
-    margin: 5px;
-    border: none;
-    background-color: transparent;
+  margin: 5px;
+  border: none;
+  background-color: transparent;
 }
 
 #scroll {
-    /* On déplace les marges latérales ici pour compresser la zone de sélection */
-    margin: 0px 15px 15px 15px; 
-    border: none;
+  /* On déplace les marges latérales ici pour compresser la zone de sélection */
+  margin: 0px 15px 15px 15px;
+  border: none;
 }
 
 #text {
-    margin: 5px;
-    border: none;
-    color: #a6adc8;
+  margin: 5px;
+  border: none;
+  color: #a6adc8;
 }
 
 #entry {
-    padding: 8px;
-    /* Plus de marges sur les côtés, juste 5px en bas pour séparer les lignes */
-    margin: 0px 0px 5px 0px; 
-    border-radius: 5px;
+  padding: 8px;
+  /* Plus de marges sur les côtés, juste 5px en bas pour séparer les lignes */
+  margin: 0px 0px 5px 0px;
+  border-radius: 5px;
 }
 
 /* La nouvelle surbrillance Magenta */
 #entry:selected {
-    background-color: #000000;
+  background-color: #000000;
 }
 
 #entry:selected #text {
-    color: #ffffff;
-    font-weight: bold;
+  color: #ffffff;
+  font-weight: bold;
 }
