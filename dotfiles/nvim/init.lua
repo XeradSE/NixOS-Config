@@ -6,6 +6,8 @@ vim.opt.tabstop = 2       -- Une tabulation équivaut à 4 espaces visuellement
 vim.opt.shiftwidth = 2    -- L'indentation automatique (avec > ou <) utilise 4 espaces
 vim.opt.expandtab = true  -- Transforme l'appui sur "Tab" en vrais espaces
 vim.opt.softtabstop = 2   -- Fait en sorte que la touche "Retour arrière" efface 4 espaces d'un coup
+-- Synchronise le presse-papier de Neovim avec celui du système
+vim.opt.clipboard = "unnamedplus"
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 
