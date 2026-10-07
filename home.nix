@@ -151,4 +151,25 @@
       };
     };
   };
+
+  programs.yazi = {
+    enable = true;
+    plugins = {
+      "lsblk-mount" = pkgs.fetchFromGitHub {
+        owner = "PHONE1X";
+        repo = "lsblk-mount.yazi";
+        rev = "main";
+        hash = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
+      };
+    };
+    keymap = {
+      manager.prepend_keymap = [
+        {
+          on = "M";
+          run = "plugin lsblk-mount";
+          desc = "Open the drive mount manager";
+        }
+      ];
+    };
+  };
 }
