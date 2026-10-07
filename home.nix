@@ -158,7 +158,7 @@
       "lsblk-mount" = pkgs.fetchFromGitHub {
         owner = "PHONE1X";
         repo = "lsblk-mount.yazi";
-        rev = "main";
+        rev = "master";
         hash = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
       };
     };
