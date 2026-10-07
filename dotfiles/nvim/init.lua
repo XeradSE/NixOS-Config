@@ -24,6 +24,9 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
+-- 3. Charger tes raccourcis clavier
+require("config.keymaps")
+
 require("lazy").setup({
 	spec = {
 		{
