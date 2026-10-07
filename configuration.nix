@@ -325,7 +325,6 @@ in
     # Bureautique & Utilitaires GUI
     vivaldi
     kdePackages.gwenview
-    gnome-disk-utility
     localsend
     qbittorrent
     # not in the nixos packets, but in flatpak - jdownloader
