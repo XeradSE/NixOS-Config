@@ -151,15 +151,4 @@
       };
     };
   };
-
-  home.activation.installYaziPlugins = config.lib.dag.entryAfter [ "writeBoundary" ] ''
-    # On vérifie si le dossier existe sans utiliser 'exit'
-    if [ -d "$HOME/.config/yazi" ]; then
-      # On ouvre un sous-shell (les parenthèses) pour ne pas perturber le reste de Nix
-      (
-        cd "$HOME/.config/yazi"
-        $DRY_RUN_CMD ${pkgs.yazi}/bin/ya pack -i
-      )
-    fi
-  '';
 }
