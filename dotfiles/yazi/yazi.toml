@@ -63,3 +63,8 @@ prepend_rules = [
     { mime = "video/*", use = [ "play" ] },
     { mime = "application/pdf", use = [ "play" ] },
 ]
+
+[[mgr.prepend_keymap]]
+on  = "M"
+run = "plugin lsblk-mount"
+desc = "Open the drive mount manager"
