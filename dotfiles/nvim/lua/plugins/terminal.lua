@@ -40,5 +40,27 @@ return {
         vim.keymap.set('t', '<C-l>', [[<Cmd>wincmd l<CR>]], opts)
       end,
     })
+
+    -- === INTÉGRATION DE YAZI ===
+    local Terminal = require('toggleterm.terminal').Terminal
+
+    local yazi = Terminal:new({
+      cmd = "yazi",
+      hidden = true,
+      direction = "float",
+      float_opts = {
+        border = "curved",
+        width = math.floor(vim.o.columns * 0.9),
+        height = math.floor(vim.o.lines * 0.9),
+      },
+    })
+
+    -- On expose la fonction globalement pour que le raccourci puisse l'appeler
+    function _G._yazi_toggle()
+      yazi:toggle()
+    end
+
+    -- Raccourci Espace + - pour ouvrir Yazi
+    vim.keymap.set("n", "<leader>e", "<cmd>lua _G._yazi_toggle()<CR>", { noremap = true, silent = true, desc = "Yazi (Terminal)" })
   end,
 }
