@@ -152,26 +152,6 @@
     };
   };
 
-  # programs.yazi = {
-  #  enable = true;
-  #  plugins = {
-  #    "lsblk-mount" = pkgs.fetchFromGitHub {
-  #      owner = "PHONE1X";
-  #      repo = "lsblk-mount.yazi";
-  #      rev = "master";
-  #      hash = "sha256-HjIDBe2lG9w+tRalfdYIwOK2kRuVPFDPq37HqEdM7UQ=";
-  #    };
-  #  };
-  #};
-
-  # home.activation.installYaziPlugins = config.lib.dag.entryAfter [ "writeBoundary" ] ''
-  #  # Se place dans le dossier Yazi lié par tes dotfiles
-  #  cd $HOME/.config/yazi || exit 0
-  #
-  #  # Lance l'installation/mise à jour automatique des plugins
-  #  $DRY_RUN_CMD ${pkgs.yazi}/bin/ya pack -i
-  #'';
-
   home.activation.installYaziPlugins = config.lib.dag.entryAfter [ "writeBoundary" ] ''
     # On vérifie si le dossier existe sans utiliser 'exit'
     if [ -d "$HOME/.config/yazi" ]; then
