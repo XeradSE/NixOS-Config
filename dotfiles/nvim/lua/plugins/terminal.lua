@@ -40,12 +40,16 @@ return {
         vim.keymap.set('t', '<C-l>', [[<Cmd>wincmd l<CR>]], opts)
       end,
     })
-
-    -- === INTÉGRATION DE YAZI ===
+    
+    -- === INTÉGRATION DE YAZI SANS NEOVIM-CEPTION ===
     local Terminal = require('toggleterm.terminal').Terminal
+    
+    -- 1. On crée un chemin vers un fichier temporaire unique
+    local yazi_tmpfile = vim.fn.tempname()
 
     local yazi = Terminal:new({
-      cmd = "yazi",
+      -- 2. On lance Yazi en mode "sélecteur" (il écrira le fichier choisi ici)
+      cmd = string.format("yazi --chooser-file='%s'", yazi_tmpfile),
       hidden = true,
       direction = "float",
       float_opts = {
@@ -53,14 +57,31 @@ return {
         width = math.floor(vim.o.columns * 0.9),
         height = math.floor(vim.o.lines * 0.9),
       },
+      -- 3. Que faire quand la fenêtre se ferme ?
+      on_close = function()
+        -- Si Yazi a écrit quelque chose dans le fichier temporaire
+        if vim.fn.filereadable(yazi_tmpfile) == 1 then
+          local selected_files = vim.fn.readfile(yazi_tmpfile)
+          
+          if #selected_files > 0 then
+            -- vim.schedule garantit qu'on attend que le terminal soit bien fermé 
+            -- avant d'ouvrir le fichier dans Neovim
+            vim.schedule(function()
+              for _, file in ipairs(selected_files) do
+                vim.cmd("edit " .. vim.fn.fnameescape(file))
+              end
+            end)
+          end
+          -- 4. On nettoie le fichier temporaire pour la prochaine fois
+          vim.fn.delete(yazi_tmpfile)
+        end
+      end,
     })
 
-    -- On expose la fonction globalement pour que le raccourci puisse l'appeler
     function _G._yazi_toggle()
       yazi:toggle()
     end
 
-    -- Raccourci Espace + - pour ouvrir Yazi
-    vim.keymap.set("n", "<leader>e", "<cmd>lua _G._yazi_toggle()<CR>", { noremap = true, silent = true, desc = "Yazi (Terminal)" })
+    vim.keymap.set("n", "<leader>-", "<cmd>lua _G._yazi_toggle()<CR>", { noremap = true, silent = true, desc = "Yazi (Terminal)" })
   end,
 }
