@@ -7,6 +7,12 @@
 
   # C'est ici la magie ! On lie tes dossiers locaux vers ~/.config
   home.file = {
+    # Exemple pour Neovim :
+    ".config/nvim" = {
+      source = ./dotfiles/nvim;
+      recursive = true;
+    };
+
     # Exemple pour Hyprland :
     ".config/hypr".source = ./dotfiles/hypr;
 
@@ -144,22 +150,17 @@
         "application/pdf" = [ "org.pwmt.zathura.desktop" ];
       };
     };
-    configFile = {
-    	"nvim" = {
-		source = config.lib.file.mkOutOfStoreSymlink "/home/xerad/dotfiles/nvim";
-	};
-    };
   };
 
-  programs.yazi = {
-    enable = true;
-    plugins = {
-      "lsblk-mount" = pkgs.fetchFromGitHub {
-        owner = "PHONE1X";
-        repo = "lsblk-mount.yazi";
-        rev = "master";
-        hash = "sha256-HjIDBe2lG9w+tRalfdYIwOK2kRuVPFDPq37HqEdM7UQ=";
-      };
-    };
-  };
+  # programs.yazi = {
+  #  enable = true;
+  #  plugins = {
+  #    "lsblk-mount" = pkgs.fetchFromGitHub {
+  #      owner = "PHONE1X";
+  #      repo = "lsblk-mount.yazi";
+  #      rev = "master";
+  #      hash = "sha256-HjIDBe2lG9w+tRalfdYIwOK2kRuVPFDPq37HqEdM7UQ=";
+  #    };
+  #  };
+  #};
 }
