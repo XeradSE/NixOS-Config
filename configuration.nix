@@ -274,6 +274,7 @@ in
     zzz
     polkit_gnome
     brightnessctl
+    tmux
 
     # ----------------------------------------
     # Environnement Hyprland (Modules)
