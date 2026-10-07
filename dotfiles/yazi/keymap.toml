@@ -1,0 +1,4 @@
+[[mgr.prepend_keymap]]
+on  = "M"
+run = "plugin lsblk-mount"
+desc = "Open the drive mount manager"
