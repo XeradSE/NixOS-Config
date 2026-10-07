@@ -15,3 +15,9 @@ map("n", "<M-l>", "<cmd>bnext<cr>", { desc = "Buffer suivant" })
 -- Optionnel : assigner j et k aux mêmes actions si tu veux garder la logique directionnelle
 map("n", "<M-j>", "<cmd>bprevious<cr>", { desc = "Buffer précédent" })
 map("n", "<M-k>", "<cmd>bnext<cr>", { desc = "Buffer suivant" })
+
+-- Redimensionner les fenêtres (slices) avec Alt + Flèches
+map("n", "<M-Up>", "<cmd>resize +2<cr>", { desc = "Augmenter la hauteur" })
+map("n", "<M-Down>", "<cmd>resize -2<cr>", { desc = "Diminuer la hauteur" })
+map("n", "<M-Left>", "<cmd>vertical resize -2<cr>", { desc = "Diminuer la largeur" })
+map("n", "<M-Right>", "<cmd>vertical resize +2<cr>", { desc = "Augmenter la largeur" })
