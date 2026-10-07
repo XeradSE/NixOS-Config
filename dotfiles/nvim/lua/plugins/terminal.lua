@@ -82,6 +82,6 @@ return {
       yazi:toggle()
     end
 
-    vim.keymap.set("n", "<leader>e", "<cmd>lua _G._yazi_toggle()<CR>", { noremap = true, silent = true, desc = "Yazi (Terminal)" })
+    vim.keymap.set("n", "<leader>-", "<cmd>lua _G._yazi_toggle()<CR>", { noremap = true, silent = true, desc = "Yazi (Terminal)" })
   end,
 }
