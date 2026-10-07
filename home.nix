@@ -163,4 +163,12 @@
   #    };
   #  };
   #};
+
+  home.activation.installYaziPlugins = config.lib.dag.entryAfter [ "writeBoundary" ] ''
+    # Se place dans le dossier Yazi lié par tes dotfiles
+    cd $HOME/.config/yazi || exit 0
+
+    # Lance l'installation/mise à jour automatique des plugins
+    $DRY_RUN_CMD ${pkgs.yazi}/bin/ya pack -i
+  '';
 }

@@ -1,0 +1,3 @@
+[dependencies]
+lsblk-mount = "PHONE1X/lsblk-mount"
+
