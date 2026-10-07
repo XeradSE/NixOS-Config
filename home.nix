@@ -162,14 +162,5 @@
         hash = "sha256-HjIDBe2lG9w+tRalfdYIwOK2kRuVPFDPq37HqEdM7UQ=";
       };
     };
-    keymap = {
-      manager.prepend_keymap = [
-        {
-          on = "M";
-          run = "plugin lsblk-mount";
-          desc = "Open the drive mount manager";
-        }
-      ];
-    };
   };
 }
