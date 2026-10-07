@@ -159,7 +159,7 @@
         owner = "PHONE1X";
         repo = "lsblk-mount.yazi";
         rev = "master";
-        hash = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
+        hash = "sha256-HjIDBe2lG9w+tRalfdYIwOK2kRuVPFDPq37HqEdM7UQ=";
       };
     };
     keymap = {
