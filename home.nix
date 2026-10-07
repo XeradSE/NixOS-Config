@@ -147,8 +147,8 @@
     configFile = {
     	"nvim" = {
 		source = config.lib.file.mkOutOfStoreSymlink "/home/xerad/dotfiles/nvim";
-	}
-    }
+	};
+    };
   };
 
   programs.yazi = {
