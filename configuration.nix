@@ -274,6 +274,8 @@ in
     zzz
     polkit_gnome
     brightnessctl
+    ncdu
+    wiremix
 
     # ----------------------------------------
     # Environnement Hyprland (Modules)
