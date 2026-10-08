@@ -1,6 +1,13 @@
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 
 {
+  imports = [ inputs.degoog.nixosModules.default ];
+
   boot.kernelPackages = pkgs.linuxPackages_latest;
   networking.hostName = "laptop";
 
@@ -28,5 +35,18 @@
 
   environment.systemPackages = with pkgs; [
   ];
+
+  services.degoog = {
+    enable = true;
+    configurePostgres = true;
+
+    environment = {
+      # DEGOOG_UNIX_SOCKET = "/var/run/degoog/degoog.sock";
+      # Other environment variables can be found at https://degoog-org.github.io/docs/environment-variables.html
+      DEGOOG_SETTINGS_PASSWORDS = "Yurkzerk52?!";
+    };
+
+    # Other option definitions can be found at https://github.com/degoog-org/degoog/blob/main/third-party/nix/module.nix
+  };
 
 }

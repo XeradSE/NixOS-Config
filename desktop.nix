@@ -1,6 +1,14 @@
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 
 {
+
+  imports = [ inputs.degoog.nixosModules.default ];
+
   # boot.kernelPackages = pkgs.linuxPackages_zen;
   boot.kernelPackages = pkgs.linuxPackages_6_12;
 
@@ -33,6 +41,19 @@
     nvidiaSettings = true;
     # "production" est plus stable, "beta" est parfois nécessaire pour les cartes très récentes
     package = config.boot.kernelPackages.nvidiaPackages.production;
+  };
+
+  services.degoog = {
+    enable = true;
+    configurePostgres = true;
+
+    environment = {
+      # DEGOOG_UNIX_SOCKET = "/var/run/degoog/degoog.sock";
+      # Other environment variables can be found at https://degoog-org.github.io/docs/environment-variables.html
+      DEGOOG_SETTINGS_PASSWORDS = "2017";
+    };
+
+    # Other option definitions can be found at https://github.com/degoog-org/degoog/blob/main/third-party/nix/module.nix
   };
 
 }
