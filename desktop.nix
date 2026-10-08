@@ -51,7 +51,7 @@
       # DEGOOG_UNIX_SOCKET = "/var/run/degoog/degoog.sock";
       # Other environment variables can be found at https://degoog-org.github.io/docs/environment-variables.html
       DEGOOG_SETTINGS_PASSWORDS = "2017";
-      DEGOOG_PUBLIC_INSTANCE = "false"; # Désactive le mode public
+      DEGOOG_PUBLIC_INSTANCE = false; # Désactive le mode public
     };
 
     # Other option definitions can be found at https://github.com/degoog-org/degoog/blob/main/third-party/nix/module.nix
