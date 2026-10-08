@@ -281,7 +281,7 @@ in
     kitty
     yazi
     nano
-    bluetuith
+    bluetui
     playerctl
     rclone
     psmisc
