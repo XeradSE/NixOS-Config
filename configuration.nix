@@ -6,6 +6,7 @@
   config,
   lib,
   pkgs,
+  inputs,
   ...
 }:
 
@@ -23,6 +24,7 @@ in
   imports = [
     # Include the results of the hardware scan.
     # ./hardware-configuration.nix -- done by flake
+    inputs.degoog.nixosModules.default
   ];
 
   # Use the systemd-boot EFI boot loader.
@@ -232,6 +234,18 @@ in
   };
   services.gvfs.enable = true; # Pour la corbeille et le montage USB
   # no longer needed - programs.adb.enable = true;  # Remplace android-udev
+
+  services.degoog = {
+    enable = true;
+    configurePostgres = true;
+
+    environment = {
+      DEGOOG_UNIX_SOCKET = "/var/run/degoog/degoog.sock";
+      # Other environment variables can be found at https://degoog-org.github.io/docs/environment-variables.html
+    };
+
+    # Other option definitions can be found at https://github.com/degoog-org/degoog/blob/main/third-party/nix/module.nix
+  };
 
   # ==========================================
   # 2. POLICES D'ÉCRITURE

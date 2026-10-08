@@ -17,6 +17,11 @@
     # Le module magique pour gérer Flatpak
     nix-flatpak.url = "github:gmodena/nix-flatpak";
     wlctl.url = "github:aashish-thapa/wlctl";
+
+    degoog = {
+      url = "github:degoog-org/degoog";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   # Ce que ton Flake va générer en sortie
