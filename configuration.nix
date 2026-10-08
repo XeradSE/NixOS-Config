@@ -240,7 +240,7 @@ in
     configurePostgres = true;
 
     environment = {
-      DEGOOG_UNIX_SOCKET = "/var/run/degoog/degoog.sock";
+      #DEGOOG_UNIX_SOCKET = "/var/run/degoog/degoog.sock";
       # Other environment variables can be found at https://degoog-org.github.io/docs/environment-variables.html
     };
 
