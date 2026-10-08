@@ -185,7 +185,7 @@ in
   # Réseau et Connectivité
   services.tailscale.enable = true;
   hardware.bluetooth.enable = true;
-  services.blueman.enable = true; # Interface graphique pour le Bluetooth
+  # services.blueman.enable = true; # Interface graphique pour le Bluetooth
 
   # Impression
   services.printing = {
@@ -286,7 +286,6 @@ in
     swappy # Capture d'écran (remplace xorg-tools)
     quickshell
     oh-my-zsh
-    pwvucontrol
     moonlight-qt
 
     # ----------------------------------------
