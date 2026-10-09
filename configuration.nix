@@ -173,7 +173,7 @@ in
 
   # Shells
   programs.zsh.enable = true;
-  programs.fish.enable = true; # Si tu utilises fish en alternative
+  # programs.fish.enable = true; # Si tu utilises fish en alternative
 
   # Virtualisation
   virtualisation.virtualbox.host.enable = true;
@@ -181,6 +181,8 @@ in
 
   # virtualisation.libvirtd.enable = true;
   # programs.virt-manager.enable = true;
+
+  virtualisation.docker.enable = true;
 
   # Réseau et Connectivité
   services.tailscale.enable = true;
