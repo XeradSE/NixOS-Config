@@ -33,6 +33,8 @@ return {
     lspconfig.cssls.setup({})  -- Pour CSS
     lspconfig.eslint.setup({}) -- Pour ESLint
 
+    lspconfig.bashls.setup({})
+
     -- Raccourcis clavier de base quand tu es sur une erreur ou un mot-clé
     vim.keymap.set('n', 'K', vim.lsp.buf.hover, { desc = "Afficher infos (Hover)" })
     vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { desc = "Aller à la définition" })
