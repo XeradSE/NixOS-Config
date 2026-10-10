@@ -133,7 +133,7 @@
       ruff # Formatteur python
       vtsls # LSP Type/JavaScript
       nodejs_26
-      bashls
+      bash-language-server
     ];
     extraLuaPackages =
       luaPkgs: with luaPkgs; [
