@@ -16,8 +16,8 @@ map("n", "<M-l>", "<cmd>bnext<cr>", { desc = "Buffer suivant" })
 map("n", "<M-j>", "<cmd>bprevious<cr>", { desc = "Buffer précédent" })
 map("n", "<M-k>", "<cmd>bnext<cr>", { desc = "Buffer suivant" })
 
--- Redimensionner les fenêtres (slices) avec Alt + Flèches
-map("n", "<M-Up>", "<cmd>resize +2<cr>", { desc = "Augmenter la hauteur" })
-map("n", "<M-Down>", "<cmd>resize -2<cr>", { desc = "Diminuer la hauteur" })
-map("n", "<M-Left>", "<cmd>vertical resize -2<cr>", { desc = "Diminuer la largeur" })
-map("n", "<M-Right>", "<cmd>vertical resize +2<cr>", { desc = "Augmenter la largeur" })
+-- Redimensionner les fenêtres (slices) avec Ctrl + Flèches
+map("n", "<C-Up>", "<cmd>resize +2<cr>", { desc = "Augmenter la hauteur" })
+map("n", "<C-Down>", "<cmd>resize -2<cr>", { desc = "Diminuer la hauteur" })
+map("n", "<C-Left>", "<cmd>vertical resize -2<cr>", { desc = "Diminuer la largeur" })
+map("n", "<C-Right>", "<cmd>vertical resize +2<cr>", { desc = "Augmenter la largeur" })
