@@ -8,11 +8,11 @@ return {
 
     -- 2. Nix (nixd)
     lspconfig.nixd.setup({
-	settings = {
-		nixd = {
-			formatting = { command = {"nixfmt"} },
-		},
-	},
+      settings = {
+        nixd = {
+          formatting = { command = { "nixfmt" } },
+        },
+      },
     })
 
     -- 3. Markdown (marksman)
@@ -34,7 +34,20 @@ return {
     lspconfig.eslint.setup({}) -- Pour ESLint
 
     lspconfig.bashls.setup({})
-    lspconfig.lua_ls.setup({})
+    lspconfig.lua_ls.setup({
+      settings = {
+        Lua = {
+          diagnostics = {
+            -- Indique au serveur que "vim" est une variable globale valide
+            globals = { "vim" },
+          },
+          workspace = {
+            -- Rend le serveur conscient des fichiers runtime de Neovim
+            library = vim.api.nvim_get_runtime_file("", true),
+          },
+        },
+      },
+    })
 
     -- Raccourcis clavier de base quand tu es sur une erreur ou un mot-clé
     vim.keymap.set('n', 'K', vim.lsp.buf.hover, { desc = "Afficher infos (Hover)" })
@@ -44,11 +57,11 @@ return {
 
     -- Formatage automatique à la sauvegarde via le LSP
     vim.api.nvim_create_autocmd("BufWritePre", {
-	desc = "Demande au LSP de formater avant de sauvegarder",
-	pattern = "*",
-	callback = function(args)
-	vim.lsp.buf.format({ bufnr = args.buf })
-	end,
+      desc = "Demande au LSP de formater avant de sauvegarder",
+      pattern = "*",
+      callback = function(args)
+        vim.lsp.buf.format({ bufnr = args.buf })
+      end,
     })
   end,
 }
