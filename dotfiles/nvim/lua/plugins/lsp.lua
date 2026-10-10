@@ -34,7 +34,7 @@ return {
     lspconfig.eslint.setup({}) -- Pour ESLint
 
     lspconfig.bashls.setup({})
-    lspconfig.luals.setup({})
+    lspconfig.lua.setup({})
 
     -- Raccourcis clavier de base quand tu es sur une erreur ou un mot-clé
     vim.keymap.set('n', 'K', vim.lsp.buf.hover, { desc = "Afficher infos (Hover)" })
