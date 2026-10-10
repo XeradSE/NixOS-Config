@@ -134,6 +134,7 @@
       vtsls # LSP Type/JavaScript
       nodejs_26
       bash-language-server
+      lua-language-server
     ];
     extraLuaPackages =
       luaPkgs: with luaPkgs; [
