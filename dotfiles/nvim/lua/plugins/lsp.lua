@@ -1,40 +1,49 @@
 return {
   "neovim/nvim-lspconfig",
   config = function()
-    local lspconfig = require('lspconfig')
+    -- vim.lsp.blabla est de base intégré, mais sans le plugin je devrais écrire tout ça pour chaque lsp
+    --
+    -- vim.lsp.config.bashls = {
+    -- cmd = { "bash-language-server", "start" },
+    -- filetypes = { "sh", "bash" },
+    -- -- Il faudrait aussi écrire une fonction complexe pour détecter
+    -- -- la racine de ton projet (root_dir) à chaque ouverture de fichier...
+    -- }
+    -- vim.lsp.enable("bashls")
 
     -- 1. C++ (clangd)
-    lspconfig.clangd.setup({})
+    vim.lsp.enable("clangd")
 
     -- 2. Nix (nixd)
-    lspconfig.nixd.setup({
+    vim.lsp.config.nixd = {
       settings = {
         nixd = {
           formatting = { command = { "nixfmt" } },
         },
       },
-    })
+    }
+    vim.lsp.enable("nixd")
 
     -- 3. Markdown (marksman)
-    lspconfig.marksman.setup({})
+    vim.lsp.enable("marksman")
 
     -- 4. Python (pyright (lsp) + ruff (formatage))
-    lspconfig.pyright.setup({})
-    lspconfig.ruff.setup({})
+    vim.lsp.enable("pyright")
+    vim.lsp.enable("ruff")
 
     -- 5. TypeScript/JavaScript (vtsls)
     -- Lspconfig l'appelle souvent tsserver ou vtsls selon la configuration
-    lspconfig.vtsls.setup({})
+    vim.lsp.enable("vtsls")
 
     -- 6. JSON - HTML - CSS - ESLint (vscode-langservers-extracted)
     -- un seul paquet mais 4 lsps différents à l'intérieur
-    lspconfig.jsonls.setup({}) -- Pour JSON
-    lspconfig.html.setup({})   -- Pour HTML
-    lspconfig.cssls.setup({})  -- Pour CSS
-    lspconfig.eslint.setup({}) -- Pour ESLint
+    vim.lsp.enable("jsonls") -- Pour JSON
+    vim.lsp.enable("html")   -- Pour HTML
+    vim.lsp.enable("cssls")  -- Pour CSS
+    vim.lsp.enable("eslint") -- Pour ESLint
 
-    lspconfig.bashls.setup({})
-    lspconfig.lua_ls.setup({
+    vim.lsp.enable("bashls")
+    vim.lsp.config.lua_ls = {
       settings = {
         Lua = {
           diagnostics = {
@@ -47,7 +56,8 @@ return {
           },
         },
       },
-    })
+    }
+    vim.lsp.enable("lua_ls")
 
     -- Raccourcis clavier de base quand tu es sur une erreur ou un mot-clé
     vim.keymap.set('n', 'K', vim.lsp.buf.hover, { desc = "Afficher infos (Hover)" })
