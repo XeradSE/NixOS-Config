@@ -5,6 +5,9 @@
 local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t')
 local workspace_dir = vim.fn.expand('~/.cache/jdtls-workspace/') .. project_name
 
+-- Si tu utilises nvim-cmp :
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
 local config = {
   -- Le wrapper NixOS permet d'appeler simplement 'jdtls'
   -- On lui passe juste le dossier de travail spécifique au projet
@@ -12,6 +15,8 @@ local config = {
 
   -- JDTLS a besoin de savoir où se trouve la racine du projet
   root_dir = vim.fs.dirname(vim.fs.find({ 'pom.xml', '.git', 'mvnw', 'gradlew' }, { upward = true })[1]),
+
+  capabilities = capabilities, -- AJOUTE CETTE LIGNE ICI
 
   -- Paramètres optionnels pour aligner JDTLS avec ton client LSP standard
   settings = {
