@@ -135,6 +135,7 @@
       nodejs_26
       bash-language-server
       lua-language-server
+      ols
     ];
     extraLuaPackages =
       luaPkgs: with luaPkgs; [
