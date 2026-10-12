@@ -13,7 +13,7 @@
     };
 
     millennium.url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
-    affinity-nix.url = "github:mrshmllow/affinity-nix";
+    #affinity-nix.url = "github:mrshmllow/affinity-nix";
     # Le module magique pour gérer Flatpak
     nix-flatpak.url = "github:gmodena/nix-flatpak";
     wlctl.url = "github:aashish-thapa/wlctl";
@@ -29,7 +29,7 @@
     {
       self,
       nixpkgs,
-      affinity-nix,
+      #affinity-nix,
       nix-flatpak,
       wlctl,
       ...
@@ -68,11 +68,11 @@
 
             ({ pkgs, inputs, ... }: {
               nixpkgs.overlays = [
-                affinity-nix.overlays.default
+                #affinity-nix.overlays.default
                 inputs.millennium.overlays.default
               ];
               environment.systemPackages = [
-                pkgs.affinity-v3
+                #pkgs.affinity-v3
                 inputs.wlctl.packages.${pkgs.stdenv.hostPlatform.system}.default
               ];
             })
@@ -100,11 +100,11 @@
 
             ({ pkgs, inputs, ... }: {
               nixpkgs.overlays = [
-                affinity-nix.overlays.default
+                #affinity-nix.overlays.default
                 inputs.millennium.overlays.default
               ];
               environment.systemPackages = [
-                pkgs.affinity-v3
+                #pkgs.affinity-v3
                 inputs.wlctl.packages.${pkgs.stdenv.hostPlatform.system}.default
               ];
             })
