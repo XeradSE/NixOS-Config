@@ -2,7 +2,7 @@ return {
   {
     "kristijanhusak/vim-dadbod-ui",
     dependencies = {
-      { "tpope/vim-dadbod", lazy = true },
+      { "tpope/vim-dadbod",                     lazy = true },
       { "kristijanhusak/vim-dadbod-completion", ft = { "sql", "mysql", "plsql" }, lazy = true },
     },
     cmd = {
@@ -16,6 +16,8 @@ return {
       vim.g.db_ui_use_nerd_fonts = 1
       -- Optionnel : où sauvegarder l'historique des requêtes
       vim.g.db_ui_save_location = vim.fn.stdpath("data") .. "/db_ui"
+      -- Force l'ouverture du tiroir sur le bord droit
+      vim.g.db_ui_win_position = 'right'
     end,
   },
   -- 2. L'injection dans nvim-cmp
