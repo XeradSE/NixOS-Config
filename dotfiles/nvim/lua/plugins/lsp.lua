@@ -58,7 +58,6 @@ return {
       },
     }
     vim.lsp.enable("lua_ls")
-    vim.lsp.enable("ols")
 
     -- Raccourcis clavier de base quand tu es sur une erreur ou un mot-clé
     vim.keymap.set('n', 'K', vim.lsp.buf.hover, { desc = "Afficher infos (Hover)" })

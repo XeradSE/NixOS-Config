@@ -300,6 +300,7 @@ in
     cmake
     gnumake
     protege
+    emacs
 
     # ----------------------------------------
     # Gaming (Steam)
