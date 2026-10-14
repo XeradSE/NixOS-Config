@@ -325,7 +325,6 @@ in
 
     # ----------------------------------------
     # Bureautique & Utilitaires GUI
-    vivaldi
     librewolf
     kdePackages.gwenview
     localsend
