@@ -10,7 +10,7 @@ return {
         transparent_background = true, -- C'est cette ligne qui fait la magie !
       })
       -- Cette fonction s'exécute quand le plugin est chargé
-      vim.cmd("colorscheme oxidescheme")
+      vim.cmd("colorscheme oxide")
     end,
   },
 }
