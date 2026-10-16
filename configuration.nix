@@ -225,7 +225,10 @@ in
       "org.jdownloader.JDownloader"
       {
         appId = "ai.storyteller.artcraft-launcher";
-        bundle = "https://github.com/storytold/craft-launcher/releases/download/v0.3.2/artcraft-launcher-0.3.2-linux-x86_64.flatpak";
+        bundle = "${pkgs.fetchurl {
+          url = "https://github.com/storytold/craft-launcher/releases/download/v0.3.2/artcraft-launcher-0.3.2-linux-x86_64.flatpak";
+          hash = "sha256-14jxsgrf7n1crjzqm2hpzbiwm1qm76scmqvak9dk8yqij393blb7";
+        }}";
         sha256 = "14jxsgrf7n1crjzqm2hpzbiwm1qm76scmqvak9dk8yqij393blb7";
       }
     ];
