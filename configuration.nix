@@ -223,6 +223,11 @@ in
     packages = [
       "com.github.tchx84.Flatseal"
       "org.jdownloader.JDownloader"
+      {
+        appId = "ai.storyteller.artcraft-launcher";
+        bundle = "${./dotfiles/flatpak/artcraft-launcher-0.3.2-linux-x86_64.flatpak}";
+        sha256 = "14jxsgrf7n1crjzqm2hpzbiwm1qm76scmqvak9dk8yqij393blb7";
+      }
     ];
 
     # Bonus : mettre à jour les Flatpaks automatiquement en tâche de fond
