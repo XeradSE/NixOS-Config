@@ -21,6 +21,8 @@
       url = "github:degoog-org/degoog";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    helium-flake.url = "github:oxcl/nix-flake-helium-browser";
+    helium-flake.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   # Ce que ton Flake va générer en sortie
@@ -30,6 +32,7 @@
       nixpkgs,
       nix-flatpak,
       wlctl,
+      helium-flake,
       ...
     }@inputs:
     {
@@ -64,14 +67,24 @@
               home-manager.users.xerad = import ./home.nix;
             }
 
-            ({ pkgs, inputs, ... }: {
-              nixpkgs.overlays = [
-                inputs.millennium.overlays.default
-              ];
-              environment.systemPackages = [
-                inputs.wlctl.packages.${pkgs.stdenv.hostPlatform.system}.default
-              ];
-            })
+            (
+              {
+                pkgs,
+                inputs,
+                helium-flake,
+                ...
+              }:
+              {
+                nixpkgs.overlays = [
+                  inputs.millennium.overlays.default
+                  helium-flake.overlays.default
+                ];
+                environment.systemPackages = [
+                  inputs.wlctl.packages.${pkgs.stdenv.hostPlatform.system}.default
+                  pkgs.helium
+                ];
+              }
+            )
           ];
         };
 
@@ -94,14 +107,24 @@
               home-manager.users.xerad = import ./home.nix;
             }
 
-            ({ pkgs, inputs, ... }: {
-              nixpkgs.overlays = [
-                inputs.millennium.overlays.default
-              ];
-              environment.systemPackages = [
-                inputs.wlctl.packages.${pkgs.stdenv.hostPlatform.system}.default
-              ];
-            })
+            (
+              {
+                pkgs,
+                inputs,
+                helium-flake,
+                ...
+              }:
+              {
+                nixpkgs.overlays = [
+                  inputs.millennium.overlays.default
+                  helium-flake.overlays.default
+                ];
+                environment.systemPackages = [
+                  inputs.wlctl.packages.${pkgs.stdenv.hostPlatform.system}.default
+                  pkgs.helium
+                ];
+              }
+            )
           ];
         };
       };
