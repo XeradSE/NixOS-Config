@@ -45,7 +45,10 @@
           system = "x86_64-linux";
 
           # + On rend les inputs disponibles dans les autres fichiers
-          specialArgs = { inherit inputs; };
+          specialArgs = {
+            inherit inputs;
+            inherit helium-flake;
+          };
 
           # On inclut tes fichiers de configuration actuels
           modules = [
@@ -91,7 +94,10 @@
         # 🖥️ Ton PC fixe (Tour)
         desktop = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
-          specialArgs = { inherit inputs; };
+          specialArgs = {
+            inherit inputs;
+            inherit helium-flake;
+          };
           modules = [
             ./hardware-desktop.nix # Le hardware scanné sur la tour
             ./configuration.nix # Le MÊME socle commun
