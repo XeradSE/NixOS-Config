@@ -21,9 +21,6 @@
       url = "github:degoog-org/degoog";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    helium-flake.url = "github:oxcl/nix-flake-helium-browser";
-    helium-flake.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   # Ce que ton Flake va générer en sortie
@@ -33,7 +30,6 @@
       nixpkgs,
       nix-flatpak,
       wlctl,
-      helium-flake,
       ...
     }@inputs:
     {
@@ -48,7 +44,6 @@
           # + On rend les inputs disponibles dans les autres fichiers
           specialArgs = {
             inherit inputs;
-            inherit helium-flake;
           };
 
           # On inclut tes fichiers de configuration actuels
@@ -80,11 +75,9 @@
               {
                 nixpkgs.overlays = [
                   inputs.millennium.overlays.default
-                  helium-flake.overlays.default
                 ];
                 environment.systemPackages = [
                   inputs.wlctl.packages.${pkgs.stdenv.hostPlatform.system}.default
-                  pkgs.helium
                 ];
               }
             )
@@ -96,7 +89,6 @@
           system = "x86_64-linux";
           specialArgs = {
             inherit inputs;
-            inherit helium-flake;
           };
           modules = [
             ./hardware-desktop.nix # Le hardware scanné sur la tour
@@ -122,11 +114,9 @@
               {
                 nixpkgs.overlays = [
                   inputs.millennium.overlays.default
-                  helium-flake.overlays.default
                 ];
                 environment.systemPackages = [
                   inputs.wlctl.packages.${pkgs.stdenv.hostPlatform.system}.default
-                  pkgs.helium
                 ];
               }
             )
