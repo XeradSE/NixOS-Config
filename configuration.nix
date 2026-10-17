@@ -333,7 +333,7 @@ in
     # ----------------------------------------
     # Bureautique & Utilitaires GUI
     librewolf
-    chromium
+    vivaldi
     kdePackages.gwenview
     localsend
     qbittorrent
