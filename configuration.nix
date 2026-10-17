@@ -333,6 +333,7 @@ in
     # ----------------------------------------
     # Bureautique & Utilitaires GUI
     vivaldi
+    helium
     kdePackages.gwenview
     localsend
     qbittorrent
