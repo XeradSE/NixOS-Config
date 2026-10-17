@@ -162,12 +162,6 @@ in
 
   # Gaming (Steam installe automatiquement les lib32, Proton, et Gamescope)
   #nixpkgs.overlays = [ inputs.millennium.overlays.default ];
-
-  nixpkgs.overlays = [
-    (import (fetchTarball "https://github.com/oxcl/nix-flake-helium-browser/archive/main.tar.gz"))
-    .overlays.default
-  ];
-
   programs.steam = {
     enable = true;
     remotePlay.openFirewall = true;
@@ -339,7 +333,6 @@ in
     # ----------------------------------------
     # Bureautique & Utilitaires GUI
     vivaldi
-    helium
     kdePackages.gwenview
     localsend
     qbittorrent
