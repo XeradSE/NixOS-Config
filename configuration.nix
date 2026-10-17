@@ -336,7 +336,6 @@ in
     kdePackages.gwenview
     localsend
     qbittorrent
-    # not in the nixos packets, but in flatpak - jdownloader
     papirus-icon-theme
     megabasterd
     davinciResolveWrapped
@@ -346,6 +345,7 @@ in
     discord
     telegram-desktop
     whatsie
+    obsidian
 
     # ----------------------------------------
     # Multimédia
