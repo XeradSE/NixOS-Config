@@ -184,6 +184,9 @@ hl.bind(mainMod .. " + right", hl.dsp.focus({ direction = "r" }))
 hl.bind(mainMod .. " + up", hl.dsp.focus({ direction = "u" }))
 hl.bind(mainMod .. " + down", hl.dsp.focus({ direction = "d" }))
 
+-- changement de wallpaper
+hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("qs -c wallpaper ipc call wallpaper toggle"))
+
 -- Espaces de travail : AZERTY (Boucle Lua optimisée)
 local azerty_workspaces = {
   ["ampersand"] = "1",
