@@ -150,6 +150,9 @@
       # Définir les applications par défaut
       defaultApplications = {
         "application/pdf" = [ "org.pwmt.zathura.desktop" ];
+        "x-scheme-handler/http" = "vivaldi-stable.desktop";
+        "x-scheme-handler/https" = "vivaldi-stable.desktop";
+        "text/html" = "vivaldi-stable.desktop";
       };
     };
   };
