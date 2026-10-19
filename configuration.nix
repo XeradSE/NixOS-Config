@@ -286,6 +286,7 @@ in
     wiremix
     coreutils
     findutils
+    variety
 
     # ----------------------------------------
     # Environnement Hyprland (Modules)
