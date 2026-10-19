@@ -34,7 +34,6 @@ hl.on("hyprland.start", function()
   -- Lancement des applications de ta forge
   hl.exec_cmd("qs -c ~/.config/quickshell/forge/")
   hl.exec_cmd("~/Documents/bluetuith_0.2.6_Linux_x86_64/bluetuith")
-  hl.exec_cmd("kitty -- bash -c ~/NixOS-Config/dotfiles/hypr/scripts/launch_awww.sh")
   hl.exec_cmd("/usr/lib/polkit-kde-authentication-agent-1")
   hl.exec_cmd("nm-applet --indicator")
   hl.exec_cmd("kbuildsycoca6")
@@ -183,9 +182,6 @@ hl.bind(mainMod .. " + left", hl.dsp.focus({ direction = "l" }))
 hl.bind(mainMod .. " + right", hl.dsp.focus({ direction = "r" }))
 hl.bind(mainMod .. " + up", hl.dsp.focus({ direction = "u" }))
 hl.bind(mainMod .. " + down", hl.dsp.focus({ direction = "d" }))
-
--- changement de wallpaper
-hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("qs -c wallpaper ipc call wallpaper toggle"))
 
 -- Espaces de travail : AZERTY (Boucle Lua optimisée)
 local azerty_workspaces = {
