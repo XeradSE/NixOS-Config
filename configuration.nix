@@ -340,7 +340,6 @@ in
     kdePackages.gwenview
     localsend
     qbittorrent
-    papirus-icon-theme
     megabasterd
     davinciResolveWrapped
     obs-studio
