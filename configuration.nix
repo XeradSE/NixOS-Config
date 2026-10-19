@@ -287,6 +287,7 @@ in
     coreutils
     findutils
     awww
+    waypaper
 
     # ----------------------------------------
     # Environnement Hyprland (Modules)
