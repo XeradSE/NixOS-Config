@@ -231,7 +231,6 @@ in
         }}";
         sha256 = "09d6y8hsw5k829kmxrccgmlmjqvkkinfhfg1d9ckxphpp2c3bdaa";
       }
-      "org.waywallen.waywallen"
     ];
 
     # Bonus : mettre à jour les Flatpaks automatiquement en tâche de fond

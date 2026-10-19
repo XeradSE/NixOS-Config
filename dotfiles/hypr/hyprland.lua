@@ -34,7 +34,6 @@ hl.on("hyprland.start", function()
   -- Lancement des applications de ta forge
   hl.exec_cmd("qs -c ~/.config/quickshell/forge/")
   hl.exec_cmd("~/Documents/bluetuith_0.2.6_Linux_x86_64/bluetuith")
-  hl.exec_cmd("~/NixOS-Config/dotfiles/hypr/wallpaper/waywallen-layer-shell-0.4.2-x86_64/waywallen-layer-shell")
   hl.exec_cmd("/usr/lib/polkit-kde-authentication-agent-1")
   hl.exec_cmd("nm-applet --indicator")
   hl.exec_cmd("kbuildsycoca6")
