@@ -353,6 +353,7 @@ in
     # ----------------------------------------
     # Multimédia
     vlc
+    mpv
     imagemagick
     cava
     pear-desktop # youtube-music
