@@ -352,7 +352,6 @@ in
 
     # ----------------------------------------
     # Multimédia
-    vlc
     mpv
     imagemagick
     cava
