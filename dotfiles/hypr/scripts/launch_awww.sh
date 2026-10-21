@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-awww-daemon &
+awww-daemon & disown
 
 while true; do 
   sleep 600; 
