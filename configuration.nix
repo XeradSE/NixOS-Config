@@ -226,10 +226,10 @@ in
       {
         appId = "ai.storyteller.artcraft-launcher";
         bundle = "${pkgs.fetchurl {
-          url = "https://github.com/storytold/craft-launcher/releases/download/v0.4.0/artcraft-launcher-0.4.0-linux-x86_64.flatpak";
-          sha256 = "09d6y8hsw5k829kmxrccgmlmjqvkkinfhfg1d9ckxphpp2c3bdaa";
+          url = "https://github.com/storytold/craft-launcher/releases/download/v0.6.1/artcraft-launcher-0.6.1-linux-x86_64.flatpak";
+          sha256 = "13my188868r35mfq0v9kgl0c50cgnr88pydf9r5cps0j596shvrd";
         }}";
-        sha256 = "09d6y8hsw5k829kmxrccgmlmjqvkkinfhfg1d9ckxphpp2c3bdaa";
+        sha256 = "13my188868r35mfq0v9kgl0c50cgnr88pydf9r5cps0j596shvrd";
       }
     ];
 
