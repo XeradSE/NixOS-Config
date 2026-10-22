@@ -151,7 +151,6 @@
         exec = "kitty mpv --keep-open %f";
         terminal = false;
         noDisplay = true;
-        mimeType = [ "image/png" ];
       };
     };
 
