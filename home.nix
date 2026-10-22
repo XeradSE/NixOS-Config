@@ -144,6 +144,17 @@
 
   xdg = {
     enable = true;
+
+    desktopEntries = {
+      mpv-kitty = {
+        name = "mpv (kitty)";
+        exec = "kitty mpv --keep-open %f";
+        terminal = false;
+        noDisplay = true;
+        mimeType = [ "image/png" ];
+      };
+    };
+
     mimeApps = {
       enable = true;
 
@@ -153,11 +164,11 @@
         "x-scheme-handler/http" = "vivaldi-stable.desktop";
         "x-scheme-handler/https" = "vivaldi-stable.desktop";
         "text/html" = "vivaldi-stable.desktop";
-        "image/png" = "kitty -- bash -c mpv";
-        "image/jpeg" = "org.kde.gwenview.desktop";
-        "image/webp" = "org.kde.gwenview.desktop";
-        "image/gif" = "org.kde.gwenview.desktop";
-        "image/avif" = "org.kde.gwenview.desktop";
+        "image/png" = "mpv-kitty.desktop";
+        "image/jpeg" = "mpv-kitty.desktop";
+        "image/webp" = "mpv-kitty.desktop";
+        "image/gif" = "mpv-kitty.desktop";
+        "image/avif" = "mpv-kitty.desktop";
       };
     };
   };
