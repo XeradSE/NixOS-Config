@@ -153,7 +153,7 @@
         "x-scheme-handler/http" = "vivaldi-stable.desktop";
         "x-scheme-handler/https" = "vivaldi-stable.desktop";
         "text/html" = "vivaldi-stable.desktop";
-        "image/png" = "org.kde.gwenview.desktop";
+        "image/png" = "kitty -- bash -c mpv";
         "image/jpeg" = "org.kde.gwenview.desktop";
         "image/webp" = "org.kde.gwenview.desktop";
         "image/gif" = "org.kde.gwenview.desktop";
