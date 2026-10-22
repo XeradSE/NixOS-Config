@@ -333,6 +333,7 @@ in
     wineWow64Packages.staging # Wine avec support 32/64 bits
     winetricks
     protonplus
+    eden
 
     # ----------------------------------------
     # Bureautique & Utilitaires GUI
