@@ -338,7 +338,6 @@ in
     # ----------------------------------------
     # Bureautique & Utilitaires GUI
     vivaldi
-    kdePackages.gwenview
     localsend
     qbittorrent
     megabasterd
