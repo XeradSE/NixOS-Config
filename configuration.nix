@@ -354,6 +354,7 @@ in
     # ----------------------------------------
     # Multimédia
     mpv
+    ffplay
     imagemagick
     cava
     pear-desktop # youtube-music
