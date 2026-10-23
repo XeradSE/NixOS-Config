@@ -288,6 +288,7 @@ in
     findutils
     awww
     waypaper
+    ffmpeg
 
     # ----------------------------------------
     # Environnement Hyprland (Modules)
