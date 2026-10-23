@@ -338,6 +338,7 @@ in
     # ----------------------------------------
     # Bureautique & Utilitaires GUI
     vivaldi
+    edge
     localsend
     qbittorrent
     megabasterd
