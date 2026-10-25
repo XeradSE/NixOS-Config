@@ -21,7 +21,7 @@
       url = "github:degoog-org/degoog";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nixpkgs-moonlight.url = "github:NixOS/nixpkgs/<rev-complet>";
+    nixpkgs-moonlight.url = "github:NixOS/nixpkgs/6fcc160353f63555b560f25588925133c8f61f2a";
   };
 
   # Ce que ton Flake va générer en sortie
