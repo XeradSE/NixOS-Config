@@ -299,7 +299,6 @@ in
     swappy # Capture d'écran (remplace xorg-tools)
     quickshell
     oh-my-zsh
-    moonlight-qt
 
     # ----------------------------------------
     # Développement & Outils

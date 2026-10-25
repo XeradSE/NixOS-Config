@@ -21,6 +21,7 @@
       url = "github:degoog-org/degoog";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nixpkgs-moonlight.url = "github:NixOS/nixpkgs/<rev-complet>";
   };
 
   # Ce que ton Flake va générer en sortie
@@ -75,6 +76,9 @@
               {
                 nixpkgs.overlays = [
                   inputs.millennium.overlays.default
+                  (final: prev: {
+                    moonlight-qt = inputs.nixpkgs-moonlight.legacyPackages.${prev.system}.moonlight-qt;
+                  })
                 ];
                 environment.systemPackages = [
                   inputs.wlctl.packages.${pkgs.stdenv.hostPlatform.system}.default
@@ -114,6 +118,9 @@
               {
                 nixpkgs.overlays = [
                   inputs.millennium.overlays.default
+                  (final: prev: {
+                    moonlight-qt = inputs.nixpkgs-moonlight.legacyPackages.${prev.system}.moonlight-qt;
+                  })
                 ];
                 environment.systemPackages = [
                   inputs.wlctl.packages.${pkgs.stdenv.hostPlatform.system}.default
