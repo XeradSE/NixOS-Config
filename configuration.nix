@@ -335,6 +335,7 @@ in
     winetricks
     protonplus
     eden
+    azahar
 
     # ----------------------------------------
     # Bureautique & Utilitaires GUI
