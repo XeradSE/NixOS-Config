@@ -179,6 +179,10 @@ in
   virtualisation.virtualbox.host.enable = true;
   users.extraGroups.vboxusers.members = [ "xerad" ];
 
+  virtualisation.waydroid.enable = true;
+  # Newer kernel versions may need
+  virtualisation.waydroid.package = pkgs.waydroid-nftables;
+
   # virtualisation.libvirtd.enable = true;
   # programs.virt-manager.enable = true;
 
