@@ -267,9 +267,3 @@ hl.window_rule({
   "float true",
   match = { class = "hyprland-run" },
 })
-
-hl.window_rule({
-  name = "nte-render-unfocused",
-  match = { class = "steam_app_default" },
-  render_unfocused = true,
-})
