@@ -9,16 +9,6 @@
   ...
 }:
 
-let
-  davinciResolveWrapped = pkgs.symlinkJoin {
-    name = "davinci-resolve-wrapped";
-    paths = [ pkgs.davinci-resolve ];
-    nativeBuildInputs = [ pkgs.makeWrapper ];
-    postBuild = ''
-      wrapProgram $out/bin/davinci-resolve --set QT_QPA_PLATFORM xcb
-    '';
-  };
-in
 {
   imports = [
     # Include the results of the hardware scan.
@@ -347,7 +337,6 @@ in
     localsend
     qbittorrent
     megabasterd
-    davinciResolveWrapped
     obs-studio
     numworks-epsilon
     zathura
