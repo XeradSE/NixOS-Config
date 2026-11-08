@@ -168,6 +168,7 @@
         "image/webp" = "mpv-kitty.desktop";
         "image/gif" = "mpv-kitty.desktop";
         "image/avif" = "mpv-kitty.desktop";
+        "video/mp4" = "mpv-kitty.desktop";
       };
     };
   };
