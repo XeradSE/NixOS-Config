@@ -339,7 +339,6 @@
     megabasterd
     obs-studio
     numworks-epsilon
-    zathura
     discord
     telegram-desktop
     whatsie
