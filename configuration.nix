@@ -334,7 +334,6 @@
     # ----------------------------------------
     # Bureautique & Utilitaires GUI
     vivaldi
-    ladybird
     localsend
     qbittorrent
     megabasterd
