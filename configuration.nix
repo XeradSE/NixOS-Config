@@ -143,6 +143,10 @@
 
   nixpkgs.config.allowUnfree = true;
 
+  nixpkgs.config.permittedInsecurePackages = [
+    "ladybird-0-unstable-2026-05-04"
+  ];
+
   # ==========================================
   # 1. SERVICES ET MODULES (Remplace les paquets isolés)
   # ==========================================
