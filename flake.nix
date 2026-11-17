@@ -12,7 +12,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    millennium.url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
+    # millennium.url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
     # Le module magique pour gérer Flatpak
     nix-flatpak.url = "github:gmodena/nix-flatpak";
     wlctl.url = "github:aashish-thapa/wlctl";

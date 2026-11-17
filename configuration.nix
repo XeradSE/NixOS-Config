@@ -156,7 +156,7 @@
     enable = true;
     remotePlay.openFirewall = true;
     dedicatedServer.openFirewall = true;
-    package = pkgs.millennium-steam;
+    # package = pkgs.millennium-steam;
     gamescopeSession.enable = true;
   };
   programs.gamemode.enable = true;

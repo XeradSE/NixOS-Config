@@ -9,8 +9,8 @@
 
   imports = [ inputs.degoog.nixosModules.default ];
 
-  # boot.kernelPackages = pkgs.linuxPackages_zen;
-  boot.kernelPackages = pkgs.linuxPackages_6_12;
+  boot.kernelPackages = pkgs.linuxPackages_zen;
+  # boot.kernelPackages = pkgs.linuxPackages_6_12;
 
   # Connecte l'utilisateur xerad automatiquement sur le TTY1
   services.getty.autologinUser = "xerad";
