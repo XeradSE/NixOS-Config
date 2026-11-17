@@ -75,7 +75,7 @@
               }:
               {
                 nixpkgs.overlays = [
-                  inputs.millennium.overlays.default
+                  # inputs.millennium.overlays.default
                   (final: prev: {
                     moonlight-qt = inputs.nixpkgs-moonlight.legacyPackages.${prev.system}.moonlight-qt;
                   })
@@ -117,7 +117,7 @@
               }:
               {
                 nixpkgs.overlays = [
-                  inputs.millennium.overlays.default
+                  # inputs.millennium.overlays.default
                   (final: prev: {
                     moonlight-qt = inputs.nixpkgs-moonlight.legacyPackages.${prev.system}.moonlight-qt;
                   })
