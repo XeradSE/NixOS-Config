@@ -2,3 +2,8 @@
 on  = "M"
 run = "plugin mount"
 desc = "Open the drive mount manager"
+
+[[mgr.prepend_keymap]]
+on   = [ "c", "m" ]
+run  = "plugin chmod"
+desc = "Chmod on selected files"
