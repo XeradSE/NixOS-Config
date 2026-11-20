@@ -283,7 +283,6 @@
     awww
     waypaper
     ffmpeg
-    fuse
 
     # ----------------------------------------
     # Environnement Hyprland (Modules)
