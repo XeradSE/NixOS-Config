@@ -225,6 +225,7 @@
         }}";
         sha256 = "1gb9k6b4lq1x299issykqpdwg5vwrhm7sd988hvic6rzmnvjb213";
       }
+      "moe.launcher.an-anime-game-launcher"
     ];
 
     # Bonus : mettre à jour les Flatpaks automatiquement en tâche de fond
